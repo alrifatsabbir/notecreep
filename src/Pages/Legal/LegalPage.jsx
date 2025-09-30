@@ -7,7 +7,7 @@ import Licenses from '../../components/Legals/Licenses';
 import { useTranslation } from 'react-i18next';
 
 const LegalPage = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation(); 
     return (
         <div className='bg-gray-800'>
             <Navbar />
