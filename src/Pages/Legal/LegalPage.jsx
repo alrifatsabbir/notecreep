@@ -11,7 +11,7 @@ const LegalPage = () => {
     return (
         <div className='bg-gray-800'>
             <Navbar />
-            <div className="container mx-auto px-24 py-20 bg-gray-800 text-white min-h-screen">
+            <div className="container mx-auto py-20 bg-gray-800 text-white min-h-screen">
                 <h1 className="text-5xl font-bold mb-6 text-center">{t('Legal Information')}</h1>
                 <div className="space-y-12">
                     <PrivacyPolicy />
