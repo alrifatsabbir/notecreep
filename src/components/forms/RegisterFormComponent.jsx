@@ -1,5 +1,3 @@
-// src/components/forms/RegisterFormComponent.jsx
-
 import React, { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import toast from 'react-hot-toast';
@@ -50,15 +48,16 @@ const RegisterFormComponent = () => {
         const loadingToastId = toast.loading(t('register.loading'));
 
         try {
-            await auth.requestOTP({
+            // 🔹 Updated: direct register call instead of requestOTP
+            await auth.register({
                 name: formData.name,
                 username: formData.username,
                 email: formData.email,
                 password: formData.password,
             });
 
-            toast.success('OTP sent! Please check your email.', { id: loadingToastId });
-            setOtpModal(true); // show OTP modal
+            toast.success('Account created! Please check your email for verification.', { id: loadingToastId });
+            setOtpModal(true);
 
         } catch (error) {
             const msg = error.response?.data?.message || t('register.invalid');
@@ -72,8 +71,8 @@ const RegisterFormComponent = () => {
         const loadingToastId = toast.loading('Verifying OTP...');
 
         try {
-            await auth.registerWithOTP({ email: formData.email, otp });
-            toast.success('Account created successfully!', { id: loadingToastId });
+            await auth.verifyEmailByOtp({ email: formData.email, otp });
+            toast.success('Email verified successfully!', { id: loadingToastId });
             setOtpModal(false);
             navigate('/login');
         } catch (error) {
