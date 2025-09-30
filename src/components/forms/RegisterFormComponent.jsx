@@ -20,6 +20,8 @@ const RegisterFormComponent = () => {
         confirmPassword: '',
     });
     const [showPassword, setShowPassword] = useState(false);
+    const [otpModal, setOtpModal] = useState(false);
+    const [otp, setOtp] = useState('');
 
     const containerRef = useRef(null);
     const titleRef = useRef(null);
@@ -37,9 +39,9 @@ const RegisterFormComponent = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = async (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
-        
+
         if (formData.password !== formData.confirmPassword) {
             toast.error(t('register.passwordMismatch'));
             return;
@@ -48,40 +50,35 @@ const RegisterFormComponent = () => {
         const loadingToastId = toast.loading(t('register.loading'));
 
         try {
-            await auth.register({ 
+            await auth.requestOTP({
                 name: formData.name,
                 username: formData.username,
                 email: formData.email,
-                password: formData.password
+                password: formData.password,
             });
 
-            toast.success(t('register.success'), {
-                id: loadingToastId,
-            });
-
-            // Redirect to the correct verification page with email as a query parameter
-            navigate(`/verify-email?email=${encodeURIComponent(formData.email)}`);
+            toast.success('OTP sent! Please check your email.', { id: loadingToastId });
+            setOtpModal(true); // show OTP modal
 
         } catch (error) {
-            let errorMessage = t('register.invalid'); 
-            
-            if (error.response && error.response.data && error.response.data.message) {
-                const serverMessage = error.response.data.message.toLowerCase();
+            const msg = error.response?.data?.message || t('register.invalid');
+            toast.error(msg, { id: loadingToastId });
+        }
+    };
 
-                if (serverMessage.includes('username') && serverMessage.includes('in use')) {
-                    errorMessage = t('register.usernameInUse');
-                } else if (serverMessage.includes('email') && serverMessage.includes('in use')) {
-                    errorMessage = t('register.emailInUse');
-                } else if (serverMessage.includes('password') && serverMessage.includes('8 digit')) {
-                    errorMessage = t('register.passwordMinLength');
-                } else {
-                    errorMessage = error.response.data.message;
-                }
-            }
-            
-            toast.error(errorMessage, {
-                id: loadingToastId,
-            });
+    const handleOtpSubmit = async () => {
+        if (!otp) return toast.error('Please enter the OTP');
+
+        const loadingToastId = toast.loading('Verifying OTP...');
+
+        try {
+            await auth.registerWithOTP({ email: formData.email, otp });
+            toast.success('Account created successfully!', { id: loadingToastId });
+            setOtpModal(false);
+            navigate('/login');
+        } catch (error) {
+            const msg = error.response?.data?.message || 'OTP verification failed';
+            toast.error(msg, { id: loadingToastId });
         }
     };
 
@@ -99,63 +96,84 @@ const RegisterFormComponent = () => {
                 <button onClick={() => changeLanguage('en')} className="text-sm font-bold text-white hover:text-[#00bf63] transition-colors">English</button>
                 <button onClick={() => changeLanguage('bn')} className="text-sm font-bold text-white hover:text-[#00bf63] transition-colors">বাংলা</button>
             </div>
-            <form ref={formRef} onSubmit={handleSubmit} className="w-full space-y-6">
-                <input
-                    type="text"
-                    name="name"
-                    placeholder={t('register.name')}
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00bf63] transition-all duration-300"
-                />
-                <input
-                    type="text"
-                    name="username"
-                    placeholder={t('register.username')}
-                    value={formData.username}
-                    onChange={handleChange}
-                    className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00bf63] transition-all duration-300"
-                />
-                <input
-                    type="email"
-                    name="email"
-                    placeholder={t('register.email')}
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00bf63] transition-all duration-300"
-                />
-                <div className="relative">
+
+            {!otpModal ? (
+                <form ref={formRef} onSubmit={handleRegister} className="w-full space-y-6">
                     <input
-                        type={showPassword ? "text" : "password"}
-                        name="password"
-                        placeholder={t('register.password')}
-                        value={formData.password}
+                        type="text"
+                        name="name"
+                        placeholder={t('register.name')}
+                        value={formData.name}
                         onChange={handleChange}
-                        className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00bf63] transition-all duration-300 pr-12"
+                        className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00bf63]"
+                    />
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder={t('register.username')}
+                        value={formData.username}
+                        onChange={handleChange}
+                        className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00bf63]"
+                    />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder={t('register.email')}
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00bf63]"
+                    />
+                    <div className="relative">
+                        <input
+                            type={showPassword ? "text" : "password"}
+                            name="password"
+                            placeholder={t('register.password')}
+                            value={formData.password}
+                            onChange={handleChange}
+                            className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00bf63] pr-12"
+                        />
+                        <button
+                            type="button"
+                            onClick={() => setShowPassword(!showPassword)}
+                            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white"
+                        >
+                            <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                        </button>
+                    </div>
+                    <input
+                        type="password"
+                        name="confirmPassword"
+                        placeholder={t('register.confirmPassword')}
+                        value={formData.confirmPassword}
+                        onChange={handleChange}
+                        className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00bf63]"
                     />
                     <button
-                        type="button"
-                        onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors duration-200"
+                        type="submit"
+                        className="w-full py-4 rounded-xl bg-[#00bf63] text-white text-xl font-bold hover:bg-[#008f4c] shadow-lg"
                     >
-                        <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                        {t('register.button')}
+                    </button>
+                </form>
+            ) : (
+                <div className="w-full space-y-6">
+                    <input
+                        type="text"
+                        name="otp"
+                        placeholder="Enter OTP"
+                        value={otp}
+                        onChange={(e) => setOtp(e.target.value)}
+                        className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00bf63]"
+                    />
+                    <button
+                        onClick={handleOtpSubmit}
+                        className="w-full py-4 rounded-xl bg-[#00bf63] text-white text-xl font-bold hover:bg-[#008f4c] shadow-lg"
+                    >
+                        Verify OTP
                     </button>
                 </div>
-                <input
-                    type="password"
-                    name="confirmPassword"
-                    placeholder={t('register.confirmPassword')}
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
-                    className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00bf63] transition-all duration-300"
-                />
-                <button
-                    type="submit"
-                    className="w-full py-4 rounded-xl bg-[#00bf63] text-white text-xl font-bold hover:bg-[#008f4c] transition-all duration-300 shadow-lg"
-                >
-                    {t('register.button')}
-                </button>
-            </form>
+            )}
+
             <p className="mt-6 text-gray-300 text-sm">
                 {t('register.haveAccount')} <a href="/login" className="text-[#c1ff72] hover:underline">{t('register.signIn')}</a>
             </p>
