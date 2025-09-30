@@ -1,0 +1,53 @@
+NoteCreep Non-Commercial License (NNCL) — v1.0
+
+Copyright (c) 2025 AL RIFAT SABBIR
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to use
+the Software **for personal, educational, research, demonstration or evaluation
+purposes only**.
+
+Under this license, you MAY:
+  a) View and run the Software locally for your own non-commercial use.
+  b) Study the source code and use it for learning or academic research.
+  c) Create forks for personal/non-commercial experimentation (but see restrictions below).
+
+You MAY NOT, under any circumstances, without separate written permission from
+the copyright holder (AL RIFAT SABBIR):
+  1) Use, reproduce, distribute, host, sublicense, or convey the Software, in
+     whole or in part, for any commercial, revenue-generating, for‑profit,
+     enterprise, or industrial purpose (collectively "Commercial Use").
+  2) Provide the Software (or derivatives) as a hosted service, SaaS, or
+     multi-tenant offering that charges money or is used in a business context
+     to generate revenue for any party.
+  3) Reuse, redistribute, or republish the Software (or derivative works)
+     within any product, service, dataset, or repository intended for sale,
+     license, or any industrial/commercial distribution.
+  4) Remove or alter this license, or claim ownership of the original Software.
+
+If you would like to obtain rights to use this Software for Commercial Use,
+contact the copyright holder at: alrifatsabbir@gmail.com to request a commercial
+license or partnership agreement.
+
+LIMITATION OF LIABILITY & WARRANTY
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+TERMS, GOVERNING LAW, AND ENFORCEMENT
+This License shall be governed by and construed in accordance with the laws of
+the jurisdiction in which the copyright holder is domiciled (replace with your
+preferred jurisdiction if you wish). Any dispute arising under or in connection
+with this License shall be subject to the exclusive jurisdiction of that
+jurisdiction's courts.
+
+If any provision of this license is held invalid or unenforceable, such
+provision shall be modified to the minimum extent necessary to make it
+enforceable, and the remaining provisions shall remain in full force and effect.
+
+VERSIONING
+This is NNCL version 1.0. Copyright holder may publish new versions; users are
+subject to the license version included with the code they received.
