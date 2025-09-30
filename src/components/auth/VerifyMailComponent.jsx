@@ -13,23 +13,26 @@ const VerifyMailFormComponent = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
+
     const [otp, setOtp] = useState('');
     const [email, setEmail] = useState(searchParams.get('email') || '');
     const [isVerifying, setIsVerifying] = useState(false);
-    const [verificationState, setVerificationState] = useState('initial'); 
+    const [verificationState, setVerificationState] = useState('initial'); // 'initial' | 'link-verifying' | 'otp-form'
 
     const containerRef = useRef(null);
     const titleRef = useRef(null);
     const formRef = useRef(null);
 
+    // GSAP animation
     useEffect(() => {
-        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+        const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
         tl.fromTo(containerRef.current, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 })
-            .fromTo(titleRef.current, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.6 }, "-=0.5")
-            .fromTo(formRef.current?.children, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.1 }, "-=0.4");
+          .fromTo(titleRef.current, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.6 }, '-=0.5')
+          .fromTo(formRef.current?.children, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.1 }, '-=0.4');
         return () => tl.kill();
     }, [verificationState]);
 
+    // Check for link verification
     useEffect(() => {
         const token = searchParams.get('token');
         const id = searchParams.get('id');
@@ -60,6 +63,7 @@ const VerifyMailFormComponent = () => {
 
     const handleOtpVerification = async (e) => {
         e.preventDefault();
+        if (!otp) return toast.error(t('verifyMail.otpRequired'));
         setIsVerifying(true);
         const loadingToastId = toast.loading(t('verifyMail.otpVerifying'));
         try {
@@ -99,10 +103,7 @@ const VerifyMailFormComponent = () => {
     }
 
     return (
-        <div
-            ref={containerRef}
-            className="flex flex-col items-center justify-center p-8 sm:p-12 bg-white/10 backdrop-blur-xl rounded-2xl shadow-2xl relative z-10 max-w-md w-full"
-        >
+        <div ref={containerRef} className="flex flex-col items-center justify-center p-8 sm:p-12 bg-white/10 backdrop-blur-xl rounded-2xl shadow-2xl relative z-10 max-w-md w-full">
             <h2 ref={titleRef} className="text-4xl sm:text-2xl font-extrabold text-white mb-8">{t('verifyMail.title')}</h2>
             <form ref={formRef} onSubmit={handleOtpVerification} className="w-full space-y-6">
                 <div className="relative">
