@@ -18,7 +18,7 @@ import { useTranslation } from 'react-i18next';
 import { AuthContext } from './context/AuthContext';
 import { analytics } from './services/api';
 import ViewNotePage from './Pages/Dashboard/ViewNotePage.jsx';
-import Footer from './components/footer.jsx';
+import Footer from './components/Footer.jsx';
 import LegalPageSection from './Pages/Legal/LegalPage.jsx';
 import Features from './Pages/Features.jsx';
 import Pricing from './Pages/Pricing.jsx';
