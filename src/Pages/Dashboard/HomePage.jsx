@@ -218,7 +218,7 @@ const HomePage = () => {
     };
 
     return (
-        <div className="bg-background text-text min-h-screen" id="home">
+        <div className="bg-background text-text min-h-screen overflow-x-hidden" id="home">
             <Navbar onNavigate={scrollToSection} />
             {/* Section 1: Hero Section */}
             <div 
