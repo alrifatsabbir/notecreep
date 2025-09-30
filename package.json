@@ -1,0 +1,43 @@
+{
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^7.0.1",
+    "@fortawesome/free-solid-svg-icons": "^7.0.1",
+    "@fortawesome/react-fontawesome": "^3.0.2",
+    "@tiptap/core": "^3.4.2",
+    "@tiptap/react": "^3.4.2",
+    "@tiptap/starter-kit": "^3.4.2",
+    "axios": "^1.11.0",
+    "gsap": "^3.13.0",
+    "i18next": "^25.4.2",
+    "i18next-http-backend": "^3.0.2",
+    "js-cookie": "^3.0.5",
+    "lucide-react": "^0.542.0",
+    "prop-types": "^15.8.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-hot-toast": "^2.6.0",
+    "react-i18next": "^15.7.3",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.8.2",
+    "react-simplemde-editor": "^5.2.0",
+    "slate": "^0.118.1",
+    "slate-react": "^0.117.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "vite": "^7.1.2"
+  }
+}

@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Not Found */
+
+/* index.css or global.css */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+
+/* end */
+body{
+    overflow-x: hidden;
+}
+
+/* Dark theme colors (default) */
+:root {
+  --color-background: #000000;
+  --color-text: #ffffff;
+  --color-primary: #00bf63;
+  --color-secondary: #c1ff72;
+}
+
+/* Light theme colors */
+.light {
+  --color-background: #fffff1;
+  --color-text: #000000;
+}
+
+.txt-hr-section1{
+    color: #000000;
+}
+.txt-hr-section2{
+    color: #000000;
+}
+.bg-hero-sec3{
+    filter: drop-shadow(0 0 10px #000000b7);
+    -webkit-filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    box-shadow: 2px solid #000000b7;
+}
+.nav-color-txt{
+    color: #000000;
+}
+.nav-color-txt:hover{
+    color: #c1ff72;
+}
+.dropdown-lang-nav:hover{
+    background-color: #000000b7;
+    color: #c1ff72;
+}
+.nav-bg-color{
+    background-color: transparent;
+}
+.hero-bg-per{
+    background-color: #2b2b2baf;
+}
+.txt-shade{
+    text-shadow: 2px 2px 4px #000000b7;
+}
+
+/* Custom styles for hot-toast if needed */
+.gsap-toast-success, .gsap-toast-error {
+    /* You can add more specific styles here or let hot-toast manage */
+    border-radius: 12px !important;
+    padding: 1rem !important;
+    font-size: 1.1rem !important;
+}
+
+
+.profile-menu-o{
+    background-color: #000000b7;
+}
+.profile-menu{
+    color: #c1ff72;
+}
+.profile-menu:hover{
+    background-color: #2b2b2baf;
+    color: #fff;
+}
+/* English Font Style */
+.lang-en, .lang-en * {
+  font-family: 'MuseoModerno', cursive;
+}
+
+/* Bangla Font Style */
+.lang-bn, .lang-bn * {
+  font-family: 'Anek Bangla', sans-serif;
+}
+.shadow-effect {
+    text-shadow: 1px 1px 2px #000000;
+}
+.shadow-effect-logo {
+    filter: drop-shadow(0 0 2px #000000);
+    -webkit-filter: drop-shadow(0 0 2px #000000);
+}
+.shadow-effect-2:hover{
+  border: 1px solid #c1ff72;
+}

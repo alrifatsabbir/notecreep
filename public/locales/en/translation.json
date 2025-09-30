@@ -1,0 +1,598 @@
+{
+  "hero_title": "Take Notes. Change the World.",
+  "hero_subtitle": "A secure and elegant space to capture your ideas, organize your life, and express your creativity.",
+  "lets_note": "Let's Note",
+  "users": "Active Users",
+  "years": "Years of Excellence",
+  "creep_blocked": "Creep Blocked",
+  "about_us_title": "About Note Creep",
+  "about_us_text": "Note Creep is not just a note-taking app; it's your digital sanctuary. We believe that your thoughts are the most powerful tool you possess, and our mission is to provide a secure and beautiful platform for you to nurture them. With a focus on simplicity, privacy, and seamless user experience, we've built a home for your ideas, big and small. Our commitment is to protect your data and empower your creativity, making sure every note you take is safe, organized, and truly yours.",
+  "services_title": "Our Core Services",
+  "services_subtitle": "From simple lists to complex projects, we have the tools you need to stay on top of everything.",
+  "service_1_title": "Intuitive Design",
+  "service_1_text": "Our clean, modern interface makes it easy to focus on your thoughts without distractions.",
+  "service_2_title": "Cross-Platform Sync",
+  "service_2_text": "Access your notes from any device, anywhere, and anytime. Your data is always with you.",
+  "service_3_title": "Robust Security",
+  "service_3_text": "We use end-to-end encryption to ensure your private notes remain completely secure.",
+  "faq_title": "Frequently Asked Questions",
+  "faq_1_question": "What is Note Creep?",
+  "faq_1_answer": "Note Creep is a secure, elegant, and feature-rich note-taking application designed to help you organize your thoughts and capture your ideas seamlessly across all your devices.",
+  "faq_2_question": "Is my data secure?",
+  "faq_2_answer": "Yes, your privacy is our top priority. We use industry-standard end-to-end encryption to ensure that your notes are accessible only to you.",
+  "faq_3_question": "Can I use it on multiple devices?",
+  "faq_3_answer": "Absolutely. Note Creep offers a cross-platform sync feature, allowing you to access and edit your notes from your phone, tablet, or desktop computer.",
+  "faq_4_question": "Is it free to use?",
+  "faq_4_answer": "We offer a free tier with core features, and a premium subscription with advanced tools for power users. You can get started for free and upgrade later!",
+  "faq_5_question": "How do I get help?",
+  "faq_5_answer": "You can reach out to our support team via the email provided in the feedback section. We're here to help you with any questions or issues you might have.",
+  "feedback_title": "We'd Love to Hear From You!",
+  "feedback_text": "Have a question or a suggestion? Feel free to reach out to us via email.",
+  "all_rights_reserved": "© 2025 Note Creep. All Rights Reserved.",
+  "about_us": "ABOUT US",
+  "FAQ" : "FAQ",
+  "faq" : "FAQ",
+  "feedback" : "FEEDBACK",
+  "FEEDBACK" : "FEEDBACK",
+  "login": "Login",
+  "notes": "NOTES",
+  "profile": "Profile",
+  "dashboard": "Dashboard",
+  "logout": "Logout",
+  "0" : "0",
+  "1" : "1",
+  "2" : "2",
+  "3" : "3",
+  "4" : "4",
+  "5" : "5",
+  "6" : "6",
+  "7" : "7",
+  "8" : "8",
+  "9" : "9",
+  "not_found_title": "404 - Page Not Found",
+  "not_found_message": "Sorry, the page you are looking for does not exist.",
+  "go_to_homepage": "Go to Home",
+  "login.title": "Welcome Back",
+  "login.username": "Username",
+  "login.password": "Password",
+  "login.button": "Login",
+  "login.notAccount": "Don't have an account?",
+  "login.signUp": "Sign Up",
+  "login.loading": "Logging in...",
+  "login.success": "Login successful! Redirecting...",
+  "login.error": "Login failed. Please try again.",
+  "login.invalid": "Invalid username or password",
+  "register.title": "Create Your Account",
+  "register.name": "Name",
+  "register.username": "Username",
+  "register.email": "Email",
+  "register.password": "Password",
+  "register.confirmPassword": "Confirm Password",
+  "register.button": "Register",
+  "register.haveAccount": "Already have an account?",
+  "register.signIn": "Login",
+  "register.passwordMismatch": "Passwords do not match",
+  "register.loading": "Registering...",
+  "register.success": "Registration successful! Please verify your email and login.",
+  "register.error": "Registration failed. Please try again.",
+  "register.invalid": "Invalid registration details",
+  "register.emailInUse": "Email already in use",
+  "register.usernameInUse": "Username already in use",
+  "passwordMinLength": "Password must be at least 8 characters long",
+  "verifyMail" : {
+    "title": "Verify Your Email",
+    "linkVerifyingTitle": "Verifying...",
+    "linkVerifyingMessage": "Please wait while we verify your email address. You will be redirected shortly.",
+    "otpPlaceholder": "Enter OTP code",
+    "emailPlaceholder": "Enter your email",
+    "button": "Verify Email",
+    "resendOtp": "Resend OTP",
+    "verifying": "Verifying...",
+    "resending": "Resending...",
+    "invalidLink": "Invalid or expired verification link.",
+    "invalidOtp": "Invalid or expired OTP. Please try again or resend.",
+    "success": "Email verified successfully! Redirecting to login...",
+    "resendSuccess": "OTP sent! Please check your email.",
+    "resendError": "Failed to resend OTP. Please try again later."
+  },
+  "Welcome, {{name}}!": "Welcome, {{name}}!",
+  "Total Notes": "Total Notes",
+  "Deleted Notes": "Deleted Notes",
+  "Pinned Notes": "Pinned Notes",
+  "Time Spent (minutes)": "Time Spent (minutes)",
+  "Notes Created": "Notes Created",
+  "Recent_Note": "Recent Note",
+  "View Full Note": "View Full Note",
+  "In Trash": "In Trash",
+  "Pinned": "Pinned",
+  "You have no notes in this category.": "You have no notes in this category.",
+  "Total time spent on the website today.": "Total time spent on the website today.",
+  "Total number of notes created.": "Total number of notes created.",
+  "No data": "No data",
+  "No Notes to View": "No Notes to View",
+  "Go to Notes": "Go to Notes",
+  "Go to Trash": "Go to Trash",
+  "Go to Pinned": "Go to Pinned",
+  "Loading...": "Loading...",
+  "Total notes created": "Total notes created",
+  "Total notes deleted": "Total notes deleted",
+  "Total notes pinned": "Total notes pinned",
+  "Create Note": "Create Note",
+  "Recent Notes": "Recent Notes",
+  "Trash": "Trash",
+  "Select": "Select",
+  "My Notes": "My Notes",
+  "Pin Selected": "Pin Selected",
+  "Delete Selected" : "Delete Selected",
+  "Cancel" : "Cancel",
+  "Failed to load notes" : "Failed to load notes",
+  "Note deleted successfully!" : "Note deleted successfully!",
+  "Failed to delete note" : "Failed to delete note.",
+  "Note unpinned successfully":"Note unpinned successfully!",
+  "Note pinned successfully":"Note pinned successfully!",
+  "Failed to update pin status":"Failed to update pin status.",
+  "Note shared successfully!":"Note shared successfully!",
+  "Failed to share note.": "Failed to share note.",
+  "Selected notes deleted successfully!":"Selected notes deleted successfully!",
+  "Failed to delete selected notes.":"Failed to delete selected notes.",
+  "Selected notes pinned successfully!":"Selected notes pinned successfully!",
+  "Failed to pin selected notes.":"Failed to pin selected notes.",
+  "Please log in to view your notes.":"Please log in to view your notes.",
+  "Pin Note": "Pin Note",
+  "Unpin Note":"Unpin Note",
+  "Delete Note":"Delete Note",
+  "Share Note":"Share Note",
+  "Restore Note": "Restore Note",
+  "Permanently Delete": "Permanently Delete",
+  "Select All": "Select All",
+  "Note restored successfully!": "Note restored successfully!",
+  "Failed to restore note.": "Failed to restore note.",
+  "Note permanently deleted!": "Note permanently deleted!",
+  "Failed to permanently delete note.": "Failed to permanently delete note.",
+  "Selected notes restored successfully!": "Selected notes restored successfully!",
+  "Failed to restore selected notes.": "Failed to restore selected notes.",
+  "Selected notes permanently deleted!": "Selected notes permanently deleted!",
+  "Your trash is empty.": "Your trash is empty.",
+  "Restore": "Restore",
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "introduction": "This Privacy Policy explains how we collect, use, share, and protect your personal information when you use our services. We value your trust and we are committed to ensuring transparency. By using our website or any of our services, you agree to the practices outlined here. Please read this document carefully, as it describes not only what we do with your data but also your rights and responsibilities as a user.",
+    
+    "section1": {
+      "title": "1. Information We Collect",
+      "body": "When you interact with our platform, we may collect different types of information to ensure smooth service delivery. This includes details that identify you, data that relates to your activities, and technical information about your devices. We collect this data through forms, automated processes, and cookies. Our aim is always to enhance your experience, not to intrude upon your privacy.",
+      "li1": "Personal identifiers such as your full name, email address, phone number, and demographic details you provide.",
+      "li2": "Account information such as usernames, passwords, and authentication logs.",
+      "li3": "Usage data including your browsing patterns, time spent on pages, and clicked elements.",
+      "li4": "Device and technical data like IP address, browser type, operating system, and screen resolution.",
+      "li5": "Cookies and tracking technologies used to remember your preferences and improve website performance.(Currently we are not using it)"
+    },
+
+    "section2": {
+      "title": "2. How We Use Information",
+      "body": "The information collected is used to provide, personalize, and improve our services. We use data to ensure smooth functionality, communicate effectively, and maintain security. Additionally, some information is used to comply with legal obligations. We never sell your personal data to third parties. Our primary goal is to provide you with a safe and seamless experience.",
+      "li1": "To provide and maintain services efficiently.",
+      "li2": "To improve the quality and reliability of features.",
+      "li3": "To personalize your experience based on preferences.",
+      "li4": "To monitor and prevent fraudulent activities.",
+      "li5": "To comply with regulations and protect our legal rights.",
+      "li6": "To deliver important updates, notifications, and promotional offers."
+    },
+
+    "section3": {
+      "title": "3. Sharing of Information",
+      "body": "We respect your privacy and limit sharing of your personal data. However, under certain circumstances, we may disclose information. These include sharing with trusted organization or governments. We take strong measures to ensure that third parties like (government) handle your data with confidentiality and security. "
+    },
+
+    "section4": {
+      "title": "4. Data Storage and Retention",
+      "body": "We retain your personal information only as long as necessary to provide services, comply with legal obligations, resolve disputes, and enforce agreements. Once data is no longer required, it is securely deleted or anonymized. Storage is managed using encrypted databases and industry-standard security practices."
+    },
+
+    "section5": {
+      "title": "5. Your Rights",
+      "intro": "As a valued user, you have certain rights concerning your personal data. These rights empower you to stay in control of your information. You may exercise them anytime by contacting us.",
+      "li1": "Right to access – You may request details of the personal data we hold.",
+      "li2": "Right to update – You can correct or update inaccurate information.",
+      "li3": "Right to delete – You may request deletion of personal data, subject to legal requirements.",
+      "li4": "Right to restrict – You can limit how we process your data under certain conditions. (You can limit data processing in paid services.)",
+      "li5": "Right to opt-out – You can opt out of marketing communications and non-essential cookies.(Not applicable currently)"
+    },
+
+    "section6": {
+      "title": "6. Cookies and Tracking",
+      "body": "Cookies help us improve your browsing experience by remembering your preferences, storing session details, and analyzing trends. You can manage cookies through your browser settings. Disabling cookies may affect some functionalities but will not block access to our services. Again we do not use cookies for our core functionality. So you can disable it without any issue."
+    },
+
+    "section7": {
+      "title": "7. Security Measures",
+      "body": "We implement industry-standard security measures, including encryption, firewalls, and secure access protocols, to protect your data. However, no online platform can guarantee 100% security. We encourage users to maintain strong passwords and be cautious while sharing personal data online."
+    },
+
+    "section8": {
+      "title": "8. Children’s Privacy",
+      "body": "Our services are mainly for taking notes and organizing tasks or information. It will not affect children directly. We do not knowingly collect personal data from children under 10 years of age without parental consent. If we discover that we have inadvertently collected such data, we will promptly delete it. Parents or guardians who believe their child has provided us with personal information without consent should contact us immediately."
+    },
+
+    "section9": {
+      "title": "9. International Data Transfers",
+      "body": "Your information may be transferred and processed outside your home country. By using our services, you consent to such transfers, provided adequate safeguards are in place to protect your data."
+    },
+
+    "section10": {
+      "title": "10. Updates to this Policy",
+      "body": "We may update this Privacy Policy periodically to reflect changes in practices, technologies, or legal requirements. Updates will be posted on this page, and significant changes will be communicated directly to you."
+    },
+
+    "section11": {
+      "title": "11. Contact Us",
+      "body": "If you have any questions, concerns, or complaints about this Privacy Policy or data practices, please contact us at alrifatsabbir@gmail.com. We take your privacy seriously and will respond promptly."
+    },
+
+    "section12": {
+      "title": "12. Final Notes",
+      "body": "By continuing to use our services, you confirm that you have read, understood, and agreed to this Privacy Policy. We are committed to protecting your information and maintaining your trust."
+    },
+
+    "closing": "Thank you for trusting us with your personal data. Your privacy is our responsibility, and we will continue to improve our practices to safeguard your information."
+  },
+  "Legal Translation": "Legal Information",
+  "termsOfService": {
+    "title": "Terms of Service",
+    "effectiveDate": "Effective Date: October 01, 2025",
+    "body": "When you register for an account, you agree to provide accurate and complete information and to keep that information current. You are responsible for preserving the confidentiality of your account credentials and for all activity that occurs under your account. If you suspect your account has been compromised, you must notify us immediately. We reserve the right to suspend or terminate accounts that are inactive, used in violation of these Terms, or otherwise present risk to the Services or other users.",
+    "intro": "Welcome to our platform. These Terms of Service (\"Terms\") govern your use of our website, applications, and services. By accessing or using the Services, you agree to these Terms in full.",
+    "section1": {
+      "title": "1. Acceptance of Terms", 
+      "body": "By using the Services, you confirm you are of legal age and agree to comply with all applicable laws."
+    },
+    "section2": {
+      "title": "2. Modifications to Terms", 
+      "body": "We may update these Terms at any time. Continued use of Services constitutes acceptance of updated Terms."
+    },
+    "section3": {
+      "title": "3. Privacy and Data", 
+      "body": "Our Privacy Policy explains how we handle user data. Using the Services signifies your consent."
+    },
+    "section4": {
+      "title": "4. Use of Services", 
+      "body": "You must use Services lawfully and not interfere with others use or the functioning of the platform."
+    },
+    "section5": {
+      "title": "5. Account Registration and Security", 
+      "body": "Provide accurate information and secure your account credentials."
+    },
+    "section6": {
+    "title": "6. Content Ownership and Rights",
+    "body": "You retain your rights to any content you submit. As it is just note taking application/ website we do not claim any ownership of your content. You can use our services to store your personal notes, ideas, and information. We strictly follow ideals of privacy and security. We do not share any content with any third party."
+    },
+
+
+    "section7": {
+    "title": "7. Payments, Subscriptions, and Refunds",
+    "body": "If the Services include paid features, you agree to pay the applicable fees and taxes. Fees are charged in advance and are non-refundable except as required by applicable law or as otherwise stated in a written agreement with us. We may use third-party payment processors to process payments. You must provide current, valid, and accepted payment information. We reserve the right to change pricing, add new fees, or introduce new charges upon notice to you. If you fail to pay any fees, we reserve the right to suspend or terminate your access to paid features."
+    },
+
+
+    "section8": {
+    "title": "8. Prohibited Conduct",
+    "body": "You must not engage in any activity that constitutes harassment, threats, discrimination, defamation, or other harmful behavior toward other users. You are prohibited from transmitting viruses, malware, or other harmful computer code, collecting or exploiting data about other users without consent, or using the Service to infringe upon the intellectual property or privacy rights of others. We may investigate and take appropriate legal action against anyone who violates these Terms, including reporting you to law enforcement authorities."
+    },
+
+
+    "section9": {
+    "title": "9. Termination and Suspension",
+    "body": "We may suspend or terminate your access to the Services, with or without notice, for any reason, including breach of these Terms or if we reasonably believe your actions could harm others or the Services. Upon termination, your right to use the Services will immediately cease, and we may delete or deactivate your account and content. Some provisions of these Terms will survive termination, including but not limited to Sections on intellectual property, disclaimers, limitation of liability, and dispute resolution."
+    },
+
+
+    "section10": {
+    "title": "10. Disclaimers and Limitation of Liability",
+    "body": "THE SERVICES ARE PROVIDED \"AS IS\" AND \"AS AVAILABLE\" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, SECURE, OR ERROR-FREE. IN NO EVENT WILL WE OR OUR AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR THE USE OF THE SERVICES, WHETHER OR NOT WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR AGGREGATE LIABILITY FOR DIRECT DAMAGES IS LIMITED TO THE GREATER OF THE AMOUNT YOU PAID TO US IN THE PAST TWELVE (12) MONTHS OR ONE HUNDRED DOLLARS (USD 100)."
+    },
+
+
+    "section11": {
+    "title": "11. Indemnification",
+    "body": "You agree to indemnify, defend and hold harmless the company and its affiliates, officers, directors, employees, agents, and licensors from and against any and all claims, liabilities, damages, losses, and expenses, including reasonable attorneys' fees and costs, arising out of or relating to: (a) your breach of these Terms; (b) your use of the Services; (c) your violation of any law or third-party rights; or (d) any content you post or transmit through the Services."
+    },
+
+
+    "section12": {
+    "title": "12. Governing Law and Dispute Resolution",
+    "body": "These Terms will be governed by and construed in accordance with the laws of the jurisdiction specified by the company, without regard to its conflict of law provisions. Except where prohibited by law, any dispute arising out of or relating to these Terms or the Services will be resolved through binding arbitration in the forum specified by the company, and you and the company each waive the right to a trial by jury and to participate in a class action. Notwithstanding the foregoing, either party may seek injunctive or other equitable relief in a court of competent jurisdiction to prevent actual or threatened infringement, misappropriation, or violation of intellectual property rights."
+    },
+
+
+    "section13": {
+    "title": "13. Miscellaneous",
+    "body": "These Terms, together with the Privacy Policy and any other policies or legal notices published by us, constitute the entire agreement between you and the company concerning the Services. If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect. Our failure to act with respect to a breach by you or others does not constitute a waiver of our right to act with respect to subsequent or similar breaches. You may not assign or transfer your rights or obligations under these Terms without our prior written consent, except that we may assign or transfer our rights and obligations to an affiliate or in connection with a merger, sale of assets, or reorganization."
+    },
+  "thanks": "Thank you for using our Services. If you have questions about these Terms, please contact us at alrifatsabbir@gmail.com."
+  },
+  "securityPolicy": {
+    "title": "Security Policy",
+    "effectiveDate": "Effective Date: October 01, 2025",
+    "intro": "We prioritize the security of our users and their data. This Security Policy outlines the measures we take to protect information, systems, and services from unauthorized access, misuse, or compromise.",
+    "section1": {
+      "title": "1. Data Protection",
+      "body": "We implement industry-standard safeguards to protect the personal information you provide. This includes encryption, secure storage, and controlled access to ensure data confidentiality and integrity."
+    },
+    "section2": {
+      "title": "2. Account Security",
+      "body": "Users are responsible for maintaining the security of their accounts. Strong passwords and multi-factor authentication (MFA) are encouraged. Sharing account credentials is prohibited."
+    },
+    "section3": {
+      "title": "3. Network Security",
+      "body": "Our networks are protected with firewalls, intrusion detection systems, and regular security audits. We continuously monitor for suspicious activity and respond to potential threats promptly."
+    },
+    "section4": {
+      "title": "4. Application Security",
+      "body": "All applications undergo rigorous testing, including vulnerability assessments and penetration tests. Updates and patches are applied regularly to minimize security risks."
+    },
+    "section5": {
+      "title": "5. Data Breach Response",
+      "body": "In the unlikely event of a data breach, we follow strict incident response procedures, notify affected users promptly, and cooperate with relevant authorities to mitigate any impact."
+    },
+    "section6": {
+      "title": "6. Employee Training",
+      "body": "Our employees undergo regular security awareness training, including best practices for password management, phishing prevention, and secure data handling."
+    },
+    "section7": {
+      "title": "7. Third-Party Services",
+      "body": "We carefully select third-party vendors that adhere to high security standards. Contracts include security requirements to ensure the protection of user data."
+    },
+    "section8": {
+      "title": "8. Physical Security",
+      "body": "Data centers and offices are equipped with restricted access, surveillance, and other physical security measures to prevent unauthorized entry."
+    },
+    "section9": {
+      "title": "9. Updates and Policy Changes",
+      "body": "We may update this Security Policy to address new threats or technological changes. Users are encouraged to review it periodically. Continued use of the Services indicates acceptance of the latest policy."
+    },
+    "thanks": "Thank you for trusting us with your security. For questions, contact alrifatsabbir@gmail.com."
+  },
+    "licenses": {
+    "title": "Licenses",
+    "effectiveDate": "Effective Date: October 01, 2025",
+    "intro": "This document outlines the licenses and legal permissions associated with the use of our software, content, and other materials. By using our services, you agree to comply with these licenses.",
+    "section1": {
+      "title": "1. Software Licenses",
+      "body": "All software provided by us is either owned by the company or properly licensed. You may use the software only as permitted under the applicable license terms. Reverse engineering, redistribution, or unauthorized copying is prohibited."
+    },
+    "section2": {
+      "title": "2. Open Source Components",
+      "body": "Some components of our software may include open source software. These components are governed by their respective licenses, which may include MIT, Apache, GPL, or similar licenses. Users must comply with those license terms."
+    },
+    "section3": {
+      "title": "3. Content Licenses",
+      "body": "All content, including text, images, videos, and other materials, is protected under copyright and/or intellectual property laws. You may not reproduce, distribute, or create derivative works without explicit permission."
+    },
+    "section4": {
+      "title": "4. Third-Party Licenses",
+      "body": "Certain third-party software or content used within our services is subject to third-party licenses. Users must adhere to the terms and conditions set forth by those third parties."
+    },
+    "section5": {
+      "title": "5. License Termination",
+      "body": "Violation of any license terms may result in the termination of your rights to use the software or content. Upon termination, you must cease all use and delete or return any licensed material as required."
+    },
+    "section6": {
+      "title": "6. Updates and Modifications",
+      "body": "Licenses may be updated or revised to comply with legal requirements or to incorporate new features. Continued use of the software or content constitutes acceptance of updated license terms."
+    },
+    "section7": {
+      "title": "7. Indemnification",
+      "body": "You agree to indemnify and hold us harmless against any claims, losses, or damages arising from misuse of licensed software or content in violation of these license terms."
+    },
+    "thanks": "Thank you for respecting our licenses. For inquiries, contact alrifatsabbir@gmail.com."
+  },
+  "footer": {
+    "Product & Features": "Product & Features",
+    "Features": "Features",
+    "Pricing": "Pricing",
+    "Dashboard": "Dashboard",
+    "Company & Info": "Company & Info",
+    "About": "About",
+    "FAQ": "FAQ",
+    "Contact": "Contact",
+    "Community": "Community",
+    "LinkedIn": "LinkedIn",
+    "GitHub": "GitHub",
+    "Facebook": "Facebook",
+    "Instagram": "Instagram",
+    "YouTube": "YouTube",
+    "Legal": "Legal",
+    "Privacy Policy": "Privacy Policy",
+    "Terms of Services": "Terms of Services",
+    "Security Policy": "Security Policy",
+    "Licenses": "Licenses",
+    "NoteCreep Logo": "NoteCreep Logo",
+    "Note Creep your ultimate note-taking companion.": "Note Creep your ultimate note-taking companion.",
+    "Mirpur, Dhaka, Bangladesh": "Mirpur, Dhaka, Bangladesh",
+    "Visit our GitHub": "Visit our GitHub",
+    "Visit our LinkedIn": "Visit our LinkedIn",
+    "Visit our Facebook": "Visit our Facebook",
+    "Visit our Instagram": "Visit our Instagram",
+    "Visit our YouTube": "Visit our YouTube",
+    "All rights reserved.": "All rights reserved.",
+    "Developed by an": "Developed by an",
+    "enthusiast ": "enthusiast ",
+    "Al Rifat Sabbir": "Al Rifat Sabbir"
+  },
+  "footer.Visit our Email": "Visit our Email",
+  "User Profile":"User Profile",
+  "Bio": "Bio",
+  "Account Management": "Account Management",
+  "Edit Profile": "Edit Profile",
+  "Logout": "Logout",
+  "Joined": "Joined",
+  "Invalid URL: Username is missing.": "Invalid URL: Username is missing.",
+  "Failed to load profile.": "Failed to load profile.",
+  "Profile not found or could not be loaded.": "Profile not found or could not be loaded.",
+  "account": {
+    "title": "Account Management",
+    "loadFail": "Failed to load account data.",
+    "deleteConfirmError": "Please type 'delete' to confirm.",
+    "deleteSuccess": "Account deleted successfully.",
+    "deleteFail": "Failed to delete account.",
+    "nameUpdateSuccess": "Name updated successfully!",
+    "nameUpdateFail": "Failed to update name.",
+    "usernameUpdateSuccess": "Username updated successfully!",
+    "usernameUpdateFail": "Failed to update username.",
+    "currentPasswordRequired": "Please enter your current password to change the email.",
+    "emailVerifyRedirect": "Password verified. Redirecting for email verification...",
+    "emailUpdateFail": "Failed to update email.",
+    "otpSent": "OTP sent to your email!",
+    "otpFail": "Failed to send OTP.",
+    "otpVerified": "OTP verified. You can now reset your password.",
+    "invalidOtp": "Invalid OTP.",
+    "passwordMismatch": "Passwords do not match.",
+    "tokenMissing": "Password reset token is missing. Please try again.",
+    "passwordChanged": "Password changed successfully!",
+    "passwordChangeFail": "Failed to change password.",
+    "notFound": "Account data not found.",
+    "viewProfile": "View Public Profile",
+    "signOut": "Sign Out",
+    "changeName": "Change Name",
+    "updateName": "Update Name",
+    "changeUsername": "Change Username",
+    "updateUsername": "Update Username",
+    "changeEmail": "Change Email",
+    "newEmail": "New Email",
+    "currentPassword": "Current Password",
+    "updateEmail": "Update Email",
+    "resetPassword": "Reset Password",
+    "requestPasswordReset": "Request Password Reset",
+    "otpSentMsg": "An OTP has been sent to your email.",
+    "enterOtp": "Enter OTP",
+    "verifyOtp": "Verify OTP",
+    "newPassword": "New Password",
+    "confirmNewPassword": "Confirm New Password",
+    "changePassword": "Change Password",
+    "dangerZone": "Danger Zone",
+    "deleteWarning": "Deleting your account is permanent and cannot be undone. All notes and data will be lost.",
+    "deletePlaceholder": "Type 'delete' to confirm",
+    "deleteAccount": "Delete My Account",
+    "Edit Profile": "Edit Profile"
+  },
+    "features": {
+    "title": "Amazing Features of Note Creep",
+    "subtitle": "Discover the key features that make Note Creep the ultimate note-taking app. Designed for productivity, simplicity, and seamless organization of your thoughts, ideas, and tasks.",
+    "sections": [
+      {
+        "title": "Efficient Note Management",
+        "paragraphs": [
+          "Organize your notes with ease. Create, edit, delete, and categorize notes effortlessly to keep your information structured and easy to access.",
+          "Quick search and filtering options ensure you can find any note instantly, saving time and increasing productivity."
+        ],
+        "list": [
+          "Unlimited notes",
+          "Categories and tags",
+          "Quick search and filter",
+          "Pin important notes"
+        ]
+      },
+      {
+        "title": "Rich Text Editing",
+        "paragraphs": [
+          "Note Creep provides a powerful rich text editor that allows you to format your notes with bold, italics, headings, lists, links, and more.",
+          "Enhance your notes with images, code snippets, and checklists for maximum clarity and organization."
+        ],
+        "list": [
+          "Bold, italic, underline formatting",
+          "Headings and lists",
+          "Checklists and bullet points",
+          "Insert images and code snippets"
+        ]
+      },
+      {
+        "title": "Cross-Device Sync",
+        "paragraphs": [
+          "Access your notes anywhere, anytime. All your notes are automatically synced across devices for uninterrupted productivity.",
+          "Whether on desktop, tablet, or mobile, your notes are always up-to-date."
+        ],
+        "list": [
+          "Automatic cloud sync",
+          "Access from multiple devices",
+          "Offline access available",
+          "Real-time updates"
+        ]
+      },
+      {
+        "title": "Secure and Private",
+        "paragraphs": [
+          "Your privacy is our priority. Notes are encrypted and securely stored, ensuring that only you can access your information.",
+          "Optional password protection and secure authentication provide an extra layer of safety for sensitive notes."
+        ],
+        "list": [
+          "End-to-end encryption",
+          "Secure cloud storage",
+          "Password protection",
+          "Two-factor authentication support"
+        ]
+      },
+      {
+        "title": "Smart Organization Tools",
+        "paragraphs": [
+          "Keep your thoughts organized with smart tools like tags, folders, and reminders. Never lose track of important notes or deadlines.",
+          "Intuitive dashboards help you visualize your notes and stay productive every day."
+        ],
+        "list": [
+          "Custom folders and tags",
+          "Pinned notes for quick access",
+          "Reminders and notifications",
+          "Dashboard overview of notes"
+        ]
+      }
+    ],
+    "conclusion": "Most of these features aren't available in free plan. Upgrade to Pro or Enterprise for advanced features and enhanced productivity. Also, paid plans aren't available currently."
+  },
+  "pricing": {
+    "title": "Flexible Pricing Plans for Note Taking App",
+    "subtitle": "Choose the plan that fits your note-taking needs. From individuals starting to large teams, we have options to support your productivity.",
+    "plans": [
+      {
+        "name": "Basic",
+        "description": "Perfect for individuals starting to take notes and organize tasks.",
+        "price": "Free",
+        "period": "forever",
+        "features": [
+          "Unlimited notes",
+          "Basic organization tools",
+          "Account Management",
+          "Sync across devices"
+        ],
+        "disabled": false
+      },
+      {
+        "name": "Pro",
+        "description": "Ideal for small teams who want more advanced features.",
+        "price": "$29.99",
+        "period": "year",
+        "features": [
+          "All Basic features",
+          "Priority support",
+          "Custom Features",
+          "Team collaboration tools"
+        ],
+        "disabled": true
+      },
+      {
+        "name": "Enterprise",
+        "description": "For large organizations needing advanced note-taking solutions.",
+        "price": "$49.99",
+        "period": "year",
+        "features": [
+          "All Pro features",
+          "Dedicated account manager",
+          "Custom integrations",
+          "24/7 support",
+          "Monthly reports"
+        ],
+        "disabled": true
+      }
+    ],
+    "selectPlan": "Select Plan",
+    "conclusion": "Start with the Free plan to organize your notes today, and upgrade when you need more advanced features. Currently paid plans aren't available."
+  }
+}
