@@ -1,6 +1,6 @@
 // src/components/forms/VerifyMailFormComponent.jsx
 
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { gsap } from 'gsap';
 import toast from 'react-hot-toast';
@@ -15,7 +15,7 @@ const VerifyMailFormComponent = () => {
     const [searchParams] = useSearchParams();
 
     const [otp, setOtp] = useState('');
-    const [email, setEmail] = useState(searchParams.get('email') || '');
+    const [email] = useState(searchParams.get('email') || '');
     const [isVerifying, setIsVerifying] = useState(false);
     const [verificationState, setVerificationState] = useState('initial'); // 'initial' | 'link-verifying' | 'otp-form'
 
