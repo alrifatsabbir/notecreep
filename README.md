@@ -1,6 +1,8 @@
 # NoteCreep
 
-![NoteCreep Logo](https://notecreep.vercel.app/assets/Note_Creep-removebg-preview-CAZBbMl4.png)
+<div align="center">
+  <img src="https://notecreep.vercel.app/assets/Note_Creep-removebg-preview-CAZBbMl4.png" alt="NoteCreep Logo">
+</div>
 
 **NoteCreep** is a modern, responsive, and secure note-taking web application built with the MERN stack. It allows users to create, manage, and organize notes efficiently, with features like pinned notes, trash management, and profile customization.
 
@@ -15,7 +17,7 @@
 - **Profile Management**: Update username, email, and personal information.
 - **Analytics**: Track session activity and usage statistics.
 - **Responsive Design**: Fully functional on desktop and mobile.
-- **Multi-language Support**: English and Bengali translations.
+- **Dual-language Support**: English and Bengali translations.
 - **Dark Mode**: Toggle between light and dark themes.
 
 ---
