@@ -92,6 +92,7 @@ If you encounter any issues or have suggestions, feel free to open an issue on t
 
 
 # 🔐 License
-
-This project is licensed under the **NoteCreep Non‑Commercial License (NNCL) — v1.0**. See [LICENSE](LICENSE) for details. For commercial licensing, contact: alrifatsabbir@gmail.com
 [![License](https://img.shields.io/badge/license-NNCL%20v1.0-red.svg)](LICENSE)
+</br>
+</br>
+This project is licensed under the **NoteCreep Non‑Commercial License (NNCL) — v1.0**. See [LICENSE](LICENSE) for details. For commercial licensing, contact: alrifatsabbir@gmail.com
