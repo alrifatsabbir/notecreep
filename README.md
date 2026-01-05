@@ -5,7 +5,9 @@
 </div>
 
 **NoteCreep** is a modern, responsive, and secure note-taking web application built with the MERN stack. It allows users to create, manage, and organize notes efficiently, with features like pinned notes, trash management, and profile customization.
-
+___
+## Status ❌
+If you want to use it mail me!
 ---
 
 ## 🚀 Features
