@@ -124,6 +124,7 @@ const RegisterFormComponent = () => {
               onChange={handleChange}
               placeholder={t('Enter your full name...')}
               className="auth-input"
+              autoComplete="name"
               required
             />
           </div>
@@ -141,6 +142,7 @@ const RegisterFormComponent = () => {
               onChange={handleChange}
               placeholder={t('Choose a unique username...')}
               className="auth-input"
+              autoComplete="username"
               required
             />
           </div>
@@ -158,6 +160,7 @@ const RegisterFormComponent = () => {
               onChange={handleChange}
               placeholder={t('name@example.com')}
               className="auth-input"
+              autoComplete="email"
               required
             />
           </div>
@@ -176,6 +179,7 @@ const RegisterFormComponent = () => {
               placeholder={t('At least 8 characters...')}
               className="auth-input"
               style={{ paddingRight: 40 }}
+              autoComplete="new-password"
               required
             />
             <button
@@ -202,6 +206,7 @@ const RegisterFormComponent = () => {
               placeholder={t('Re-enter password...')}
               className="auth-input"
               style={{ paddingRight: 40 }}
+              autoComplete="new-password"
               required
             />
             <button

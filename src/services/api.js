@@ -1,8 +1,17 @@
   // src/services/api.js
 import axios from 'axios';
 
+const getBaseUrl = () => {
+  let url = (import.meta.env.VITE_API_URL || 'http://localhost:5000/api').trim();
+  url = url.replace(/\/+$/, '');
+  if (!url.endsWith('/api')) {
+    url += '/api';
+  }
+  return url;
+};
+
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  baseURL: getBaseUrl(),
 });
 
 // Token interceptor - প্রতিটি request এর সাথে token পাঠাও

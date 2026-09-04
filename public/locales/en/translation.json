@@ -55,6 +55,7 @@
   "login.title": "Welcome Back",
   "login.username": "Username",
   "login.password": "Password",
+  "Password": "Password",
   "login.button": "Login",
   "login.notAccount": "Don't have an account?",
   "login.signUp": "Sign Up",

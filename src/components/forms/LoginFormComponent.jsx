@@ -88,6 +88,7 @@ const LoginFormComponent = () => {
               onChange={handleChange}
               placeholder={t('Enter your username...')}
               className="auth-input"
+              autoComplete="username"
               required
               autoFocus
             />
@@ -112,6 +113,7 @@ const LoginFormComponent = () => {
               placeholder={t('Enter your password...')}
               className="auth-input"
               style={{ paddingRight: 40 }}
+              autoComplete="current-password"
               required
             />
             <button

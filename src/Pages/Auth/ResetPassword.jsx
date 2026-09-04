@@ -117,6 +117,7 @@ const ResetPassword = ({ isDarkTheme, toggleTheme }) => {
                     placeholder={t('At least 8 characters...')}
                     className="auth-input"
                     style={{ paddingRight: 40 }}
+                    autoComplete="new-password"
                     required
                     autoFocus
                   />
@@ -142,6 +143,7 @@ const ResetPassword = ({ isDarkTheme, toggleTheme }) => {
                     placeholder={t('Re-enter new password...')}
                     className="auth-input"
                     style={{ paddingRight: 40 }}
+                    autoComplete="new-password"
                     required
                   />
                   <button
