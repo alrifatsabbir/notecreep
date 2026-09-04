@@ -1,0 +1,27 @@
+{
+  "id": "/",
+  "short_name": "NoteCreep",
+  "name": "NoteCreep - Encrypted Note Manager",
+  "description": "Zero-knowledge encrypted note manager.",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#060a13",
+  "theme_color": "#0d1117",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "categories": ["productivity", "utilities"]
+}

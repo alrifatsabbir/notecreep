@@ -1,71 +1,67 @@
 import React, { useState } from 'react';
-import { auth } from "../../services/api"; // ✅ এখানে api এর পরিবর্তে auth ইম্পোর্ট করা হয়েছে
+import { auth } from '../../services/api';
 import toast from 'react-hot-toast';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 
 const ProfileEditModal = ({ isOpen, onClose, currentBio, onUpdate }) => {
-    const [bio, setBio] = useState(currentBio);
-    const [isLoading, setIsLoading] = useState(false);
+  const { t } = useTranslation();
+  const [bio, setBio] = useState(currentBio || '');
+  const [isLoading, setIsLoading] = useState(false);
 
-    if (!isOpen) return null;
+  if (!isOpen) return null;
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setIsLoading(true);
-        try {
-            const response = await auth.updateUserProfile({ bio });
-            toast.success("Profile updated successfully!");
-            onUpdate({ bio });
-            onClose();
-        } catch (error) {
-            console.error("Error updating profile:", error);
-            toast.error("Failed to update profile.");
-        } finally {
-            setIsLoading(false);
-        }
-    };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    try {
+      await auth.updateProfile({ bio });
+      toast.success(t('Profile updated'));
+      onUpdate({ bio });
+      onClose();
+    } catch (error) {
+      console.error('Error updating profile:', error);
+      toast.error(t('Failed to update profile'));
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-    return (
-        <div className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50">
-            <div className="bg-gray-800 p-8 rounded-lg shadow-xl w-full max-w-md">
-                <div className="flex justify-between items-center mb-4">
-                    <h2 className="text-2xl font-bold text-white">Edit Profile</h2>
-                    <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-                <form onSubmit={handleSubmit}>
-                    <div className="mb-4">
-                        <label htmlFor="bio" className="block text-gray-400 text-sm font-bold mb-2">Bio</label>
-                        <textarea
-                            id="bio"
-                            value={bio}
-                            onChange={(e) => setBio(e.target.value)}
-                            rows="4"
-                            className="w-full px-3 py-2 text-white bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
-                        ></textarea>
-                    </div>
-                    <div className="flex justify-end space-x-4">
-                        <button
-                            type="button"
-                            onClick={onClose}
-                            className="bg-gray-600 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded-lg"
-                        >
-                            Cancel
-                        </button>
-                        <button
-                            type="submit"
-                            disabled={isLoading}
-                            className={`py-2 px-4 rounded-lg font-bold transition-colors duration-300 ${isLoading ? 'bg-purple-400' : 'bg-purple-600 hover:bg-purple-700'}`}
-                        >
-                            {isLoading ? 'Saving...' : 'Save Changes'}
-                        </button>
-                    </div>
-                </form>
-            </div>
+  return (
+    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(4px)', zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16 }}>
+      <div style={{ background: '#0d1117', border: '1px solid #1e293b', borderRadius: 16, padding: 24, width: '100%', maxWidth: 440 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
+          <h2 style={{ fontSize: 18, fontWeight: 700, color: '#fff', margin: 0 }}>{t('Edit Bio')}</h2>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', color: '#64748b', cursor: 'pointer', fontSize: 16, padding: 4 }}>
+            <FontAwesomeIcon icon={faTimes} />
+          </button>
         </div>
-    );
+        <form onSubmit={handleSubmit}>
+          <div style={{ marginBottom: 16 }}>
+            <label style={{ display: 'block', fontSize: 12, fontFamily: 'monospace', color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>{t('Bio')}</label>
+            <textarea
+              value={bio}
+              onChange={(e) => setBio(e.target.value)}
+              rows="4"
+              style={{ width: '100%', padding: '10px 14px', background: '#080c14', border: '1px solid #1e293b', borderRadius: 10, color: '#e2e8f0', fontSize: 14, outline: 'none', resize: 'vertical', lineHeight: 1.6 }}
+              placeholder={t('Write a short bio about yourself...')}
+            />
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}>
+            <button type="button" onClick={onClose}
+              style={{ padding: '8px 16px', background: '#1e293b', color: '#94a3b8', border: 'none', borderRadius: 8, cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              {t('Cancel')}
+            </button>
+            <button type="submit" disabled={isLoading}
+              style={{ padding: '8px 16px', background: '#00bf63', color: '#000', border: 'none', borderRadius: 8, cursor: 'pointer', fontWeight: 700, fontSize: 13, opacity: isLoading ? 0.6 : 1 }}>
+              {isLoading ? t('Saving...') : t('Save Changes')}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default ProfileEditModal;

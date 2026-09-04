@@ -1,0 +1,329 @@
+/* Notes Page - High-End Cockpit Styling */
+.notes-root {
+  min-height: 100vh;
+  background: #060a13;
+  color: #e2e8f0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.notes-ambient-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(0, 191, 99, 0.04), transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(59, 130, 246, 0.04), transparent 45%);
+  z-index: 0;
+}
+
+.notes-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 96px 24px 64px;
+}
+
+/* Header & Controls */
+.notes-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.notes-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.notes-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.notes-badge-count {
+  padding: 3px 10px;
+  background: rgba(0, 191, 99, 0.15);
+  border: 1px solid rgba(0, 191, 99, 0.3);
+  color: #00bf63;
+  font-size: 11px;
+  font-family: monospace;
+  font-weight: 700;
+  border-radius: 99px;
+}
+
+/* Search & Filter Bar */
+.notes-filter-strip {
+  background: #0d1117;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 14px 18px;
+  margin-bottom: 28px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.notes-search-box {
+  position: relative;
+  flex: 1;
+  min-width: 240px;
+}
+
+.notes-search-input {
+  width: 100%;
+  padding: 10px 14px 10px 38px;
+  background: #080c14;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.notes-search-input:focus {
+  border-color: #00bf63;
+}
+
+.notes-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: 13px;
+}
+
+.notes-action-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.notes-btn-create {
+  padding: 9px 18px;
+  background: #00bf63;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+.notes-btn-create:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.notes-btn-icon {
+  padding: 9px 14px;
+  background: #080c14;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.notes-btn-icon:hover {
+  border-color: #00bf63;
+  color: #ffffff;
+  background: #0d1420;
+}
+
+.notes-btn-active {
+  border-color: #00bf63 !important;
+  color: #00bf63 !important;
+  background: rgba(0, 191, 99, 0.1) !important;
+}
+
+/* Bulk Selection Sticky Control Bar */
+.notes-bulk-bar {
+  position: sticky;
+  top: 80px;
+  z-index: 40;
+  margin-bottom: 24px;
+  background: #0f172a;
+  border: 1px solid #00bf63;
+  border-radius: 14px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px -5px rgba(0, 191, 99, 0.2);
+}
+
+/* Note Cards Grid */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.note-card {
+  background: #0d1117;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.note-card:hover {
+  border-color: rgba(0, 191, 99, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.6);
+}
+
+.note-card-selected {
+  border-color: #00bf63 !important;
+  box-shadow: 0 0 0 2px rgba(0, 191, 99, 0.4) !important;
+  background: #0c1813 !important;
+}
+
+.note-card-readonly {
+  opacity: 0.85;
+}
+
+.note-card-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.note-badge-pin {
+  padding: 2px 8px;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #f59e0b;
+  font-size: 10px;
+  font-family: monospace;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+.note-badge-share {
+  padding: 2px 8px;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #3b82f6;
+  font-size: 10px;
+  font-family: monospace;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+.note-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px;
+  line-height: 1.4;
+}
+
+.note-excerpt {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0 0 16px;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.note-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid #161f30;
+  margin-top: auto;
+}
+
+.note-date {
+  font-size: 11px;
+  font-family: monospace;
+  color: #64748b;
+}
+
+.note-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.note-btn-action {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #080c14;
+  border: 1px solid #1e293b;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.note-btn-action:hover {
+  background: #111827;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.note-btn-danger:hover {
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.note-btn-pin-active {
+  color: #f59e0b !important;
+  border-color: rgba(245, 158, 11, 0.4) !important;
+  background: rgba(245, 158, 11, 0.1) !important;
+}
+
+/* Empty State */
+.notes-empty-card {
+  background: #0d1117;
+  border: 1px dashed #1e293b;
+  border-radius: 20px;
+  padding: 64px 24px;
+  text-align: center;
+  max-width: 480px;
+  margin: 40px auto;
+}

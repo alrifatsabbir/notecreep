@@ -1,31 +1,28 @@
-// src/pages/LoginPage.jsx
-
 import React from 'react';
-import AnimatedNumbers from '../../components/AnimatedNumbers'; 
-import LoginFormComponent from '../../components/forms/LoginFormComponent'; 
+import LoginFormComponent from '../../components/forms/LoginFormComponent';
 import Navbar from '../../components/Navbar';
-// Toaster is removed from here
-import { toast } from 'react-hot-toast'; 
+import './AuthPages.css';
 
-const LoginPage = () => {
-    // customToast function is no longer needed
-    const customToast = (message, type) => {
-        // This function is now redundant
-    };
+const LoginPage = ({ isDarkTheme, toggleTheme }) => {
+  return (
+    <div className="auth-root">
+      {/* Background Ambient Orbs */}
+      <div className="auth-ambient-bg">
+        <div className="auth-orb auth-orb-1" />
+        <div className="auth-orb auth-orb-2" />
+      </div>
 
-    return (
-        <div className="relative min-h-screen flex flex-col items-center p-4 overflow-hidden">
-            {/* Navbar is here, it should be in App.jsx but keeping it for your current setup */}
-            <div className="fixed inset-x-0 top-0 z-50">
-                <Navbar />
-            </div>
+      {/* Navbar */}
+      <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50 }}>
+        <Navbar isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
+      </div>
 
-            <div className="w-full flex-grow flex flex-col items-center justify-center pt-16">
-                <AnimatedNumbers />
-                <LoginFormComponent /> {/* customToast prop is removed */}
-            </div>
-        </div>
-    );
+      {/* Form Content */}
+      <div style={{ position: 'relative', zIndex: 10, width: '100%', display: 'flex', justifyContent: 'center', padding: '100px 20px 40px' }}>
+        <LoginFormComponent />
+      </div>
+    </div>
+  );
 };
 
 export default LoginPage;

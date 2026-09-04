@@ -30,25 +30,25 @@
   "feedback_text": "Have a question or a suggestion? Feel free to reach out to us via email.",
   "all_rights_reserved": "© 2025 Note Creep. All Rights Reserved.",
   "about_us": "ABOUT US",
-  "FAQ" : "FAQ",
-  "faq" : "FAQ",
-  "feedback" : "FEEDBACK",
-  "FEEDBACK" : "FEEDBACK",
+  "FAQ": "FAQ",
+  "faq": "FAQ",
+  "feedback": "FEEDBACK",
+  "FEEDBACK": "FEEDBACK",
   "login": "Login",
   "notes": "NOTES",
   "profile": "Profile",
   "dashboard": "Dashboard",
   "logout": "Logout",
-  "0" : "0",
-  "1" : "1",
-  "2" : "2",
-  "3" : "3",
-  "4" : "4",
-  "5" : "5",
-  "6" : "6",
-  "7" : "7",
-  "8" : "8",
-  "9" : "9",
+  "0": "0",
+  "1": "1",
+  "2": "2",
+  "3": "3",
+  "4": "4",
+  "5": "5",
+  "6": "6",
+  "7": "7",
+  "8": "8",
+  "9": "9",
   "not_found_title": "404 - Page Not Found",
   "not_found_message": "Sorry, the page you are looking for does not exist.",
   "go_to_homepage": "Go to Home",
@@ -79,12 +79,16 @@
   "register.emailInUse": "Email already in use",
   "register.usernameInUse": "Username already in use",
   "passwordMinLength": "Password must be at least 8 characters long",
-  "verifyMail" : {
+  "verifyMail": {
     "title": "Verify Your Email",
+    "subtitle": "Enter the 6-digit verification code sent to your registered email address.",
     "linkVerifyingTitle": "Verifying...",
     "linkVerifyingMessage": "Please wait while we verify your email address. You will be redirected shortly.",
-    "otpPlaceholder": "Enter OTP code",
-    "emailPlaceholder": "Enter your email",
+    "linkVerifying": "Validating verification link...",
+    "otpPlaceholder": "Enter 6-digit OTP code",
+    "emailPlaceholder": "Enter your email address",
+    "emailRequired": "Please provide an email address.",
+    "otpRequired": "Please enter the verification code.",
     "button": "Verify Email",
     "resendOtp": "Resend OTP",
     "verifying": "Verifying...",
@@ -105,6 +109,21 @@
   "View Full Note": "View Full Note",
   "In Trash": "In Trash",
   "Pinned": "Pinned",
+  "READ ONLY": "READ ONLY",
+  "CAN EDIT": "CAN EDIT",
+  "Revoke Sharing Access": "Revoke Sharing Access",
+  "Remove Shared Note": "Remove Shared Note",
+  "Move Note to Trash": "Move Note to Trash",
+  "Permanently Delete Note?": "Permanently Delete Note?",
+  "Permanently Delete Selected Notes?": "Permanently Delete Selected Notes?",
+  "Move Selected Notes to Trash": "Move Selected Notes to Trash",
+  "Revoke Access": "Revoke Access",
+  "Remove Note": "Remove Note",
+  "Move to Trash": "Move to Trash",
+  "Move All to Trash": "Move All to Trash",
+  "Permanently Delete": "Permanently Delete",
+  "Permanently Delete All": "Permanently Delete All",
+  "This action cannot be undone.": "This action cannot be undone.",
   "You have no notes in this category.": "You have no notes in this category.",
   "Total time spent on the website today.": "Total time spent on the website today.",
   "Total number of notes created.": "Total number of notes created.",
@@ -123,25 +142,25 @@
   "Select": "Select",
   "My Notes": "My Notes",
   "Pin Selected": "Pin Selected",
-  "Delete Selected" : "Delete Selected",
-  "Cancel" : "Cancel",
-  "Failed to load notes" : "Failed to load notes",
-  "Note deleted successfully!" : "Note deleted successfully!",
-  "Failed to delete note" : "Failed to delete note.",
-  "Note unpinned successfully":"Note unpinned successfully!",
-  "Note pinned successfully":"Note pinned successfully!",
-  "Failed to update pin status":"Failed to update pin status.",
-  "Note shared successfully!":"Note shared successfully!",
+  "Delete Selected": "Delete Selected",
+  "Cancel": "Cancel",
+  "Failed to load notes": "Failed to load notes",
+  "Note deleted successfully!": "Note deleted successfully!",
+  "Failed to delete note": "Failed to delete note.",
+  "Note unpinned successfully": "Note unpinned successfully!",
+  "Note pinned successfully": "Note pinned successfully!",
+  "Failed to update pin status": "Failed to update pin status.",
+  "Note shared successfully!": "Note shared successfully!",
   "Failed to share note.": "Failed to share note.",
-  "Selected notes deleted successfully!":"Selected notes deleted successfully!",
-  "Failed to delete selected notes.":"Failed to delete selected notes.",
-  "Selected notes pinned successfully!":"Selected notes pinned successfully!",
-  "Failed to pin selected notes.":"Failed to pin selected notes.",
-  "Please log in to view your notes.":"Please log in to view your notes.",
+  "Selected notes deleted successfully!": "Selected notes deleted successfully!",
+  "Failed to delete selected notes.": "Failed to delete selected notes.",
+  "Selected notes pinned successfully!": "Selected notes pinned successfully!",
+  "Failed to pin selected notes.": "Failed to pin selected notes.",
+  "Please log in to view your notes.": "Please log in to view your notes.",
   "Pin Note": "Pin Note",
-  "Unpin Note":"Unpin Note",
-  "Delete Note":"Delete Note",
-  "Share Note":"Share Note",
+  "Unpin Note": "Unpin Note",
+  "Delete Note": "Delete Note",
+  "Share Note": "Share Note",
   "Restore Note": "Restore Note",
   "Permanently Delete": "Permanently Delete",
   "Select All": "Select All",
@@ -154,10 +173,243 @@
   "Selected notes permanently deleted!": "Selected notes permanently deleted!",
   "Your trash is empty.": "Your trash is empty.",
   "Restore": "Restore",
+  "Title": "Title",
+  "Content Body": "Content Body",
+  "Title...": "Title...",
+  "Write your markdown note here...": "Write your markdown note here...",
+  "Editor": "Editor",
+  "Preview": "Preview",
+  "Markdown Guide": "Markdown Guide",
+  "Bold": "Bold",
+  "Italic": "Italic",
+  "Heading": "Heading",
+  "Blockquote": "Blockquote",
+  "Code Block": "Code Block",
+  "Link": "Link",
+  "Checklist": "Checklist",
+  "Save Note": "Save Note",
+  "Edit Note": "Edit Note",
+  "Edit Shared Note": "Edit Shared Note",
+  "View Note": "View Note",
+  "Shared Note": "Shared Note",
+  "Share & Access": "Share & Access",
+  "Share & Manage Access": "Share & Manage Access",
+  "Current Collaborators": "Current Collaborators",
+  "Add Collaborator by Username": "Add Collaborator by Username",
+  "Read Only": "Read Only",
+  "Can Edit": "Can Edit",
+  "Remove": "Remove",
+  "Revoke Access": "Revoke Access",
+  "Back to Workspace": "Back to Workspace",
+  "Share Access": "Share Access",
+  "Sharing Access...": "Sharing Access...",
+  "This note is not currently shared with anyone.": "This note is not currently shared with anyone.",
+  "Note shared with {{username}} ({{permission}})!": "Note shared with {{username}} ({{permission}})!",
+  "Access revoked for {{username}}": "Access revoked for {{username}}",
+  "Revoke sharing access for {{username}}?": "Revoke sharing access for {{username}}?",
+  "Remove this shared note from your list?": "Remove this shared note from your list?",
+  "Note removed from your list.": "Note removed from your list.",
+  "PINNED": "PINNED",
+  "words": "words",
+  "chars": "chars",
+  "min read": "min read",
+  "Empty content...": "Empty content...",
+  "Untitled Note": "Untitled Note",
+  "Note moved to trash.": "Note moved to trash.",
+  "Failed to load note or access denied.": "Failed to load note or access denied.",
+  "Workspace Notes": "Workspace Notes",
+  "Search title, content...": "Search title, content...",
+  "Newest First": "Newest First",
+  "Oldest First": "Oldest First",
+  "Title (A-Z)": "Title (A-Z)",
+  "Length": "Length",
+  "No matching notes found": "No matching notes found",
+  "No notes created yet": "No notes created yet",
+  "Try adjusting your search query or category filters.": "Try adjusting your search query or category filters.",
+  "Create your first note to start organizing ideas securely.": "Create your first note to start organizing ideas securely.",
+  "Create First Note": "Create First Note",
+  "Pin Read-only": "Pin Read-only",
+  "Delete Read-only": "Delete Read-only",
+  "Please log in to view your pinned notes.": "Please log in to view your pinned notes.",
+  "Pin important notes from your workspace to keep them quickly accessible here.": "Pin important notes from your workspace to keep them quickly accessible here.",
+  "View Workspace Notes": "View Workspace Notes",
+  "Trash Bin": "Trash Bin",
+  "Trashed": "Trashed",
+  "Restore Selected": "Restore Selected",
+  "Erase Permanently": "Erase Permanently",
+  "Clear Selection": "Clear Selection",
+  "Trash is Empty": "Trash is Empty",
+  "Return to Workspace": "Return to Workspace",
+  "TRASHED": "TRASHED",
+  "Please fill in both title and content.": "Please fill in both title and content.",
+  "You do not have permission to edit this note.": "You do not have permission to edit this note.",
+  "Note updated successfully!": "Note updated successfully!",
+  "Note created successfully!": "Note created successfully!",
+  "Please log in to view your trash.": "Please log in to view your trash.",
+  "Go to Login": "Go to Login",
+  "SYSTEM ADMINISTRATOR CONSOLE": "SYSTEM ADMINISTRATOR CONSOLE",
+  "PERSONAL WORKSPACE": "PERSONAL WORKSPACE",
+  "Overview of note activity, session telemetry, and real-time statistics.": "Overview of note activity, session telemetry, and real-time statistics.",
+  "all": "All",
+  "pinned": "Pinned",
+  "shared": "Shared",
+  "Failed to load account settings": "Failed to load account settings",
+  "Type \"delete\" to confirm account erasure.": "Type \"delete\" to confirm account erasure.",
+  "Account deleted successfully.": "Account deleted successfully.",
+  "Failed to delete account.": "Failed to delete account.",
+  "Name updated successfully": "Name updated successfully",
+  "Failed to update name": "Failed to update name",
+  "Username updated successfully": "Username updated successfully",
+  "Failed to update username": "Failed to update username",
+  "Current password is required to change email": "Current password is required to change email",
+  "Verification link sent to new email.": "Verification link sent to new email.",
+  "Failed to update email": "Failed to update email",
+  "Reset instructions sent to your email!": "Reset instructions sent to your email!",
+  "Failed to request reset": "Failed to request reset",
+  "Account details could not be loaded.": "Account details could not be loaded.",
+  "Account Settings": "Account Settings",
+  "Manage security, credentials, and profile preferences": "Manage security, credentials, and profile preferences",
+  "View Profile": "View Profile",
+  "Sign Out": "Sign Out",
+  "Full Name": "Full Name",
+  "Display Name": "Display Name",
+  "Save Display Name": "Save Display Name",
+  "Account Handle": "Account Handle",
+  "Username": "Username",
+  "Update Username": "Update Username",
+  "Email Address": "Email Address",
+  "New Email Address": "New Email Address",
+  "Current Password (For Verification)": "Current Password (For Verification)",
+  "Enter current password...": "Enter current password...",
+  "Update Email & Verify": "Update Email & Verify",
+  "Password Security": "Password Security",
+  "Need to change your security credentials? Request a password reset link sent directly to your registered email address.": "Need to change your security credentials? Request a password reset link sent directly to your registered email address.",
+  "Send Password Reset Email": "Send Password Reset Email",
+  "Danger Zone - Account Termination": "Danger Zone - Account Termination",
+  "Permanently erase your NoteCreep account, notes, pinned data, and settings. This action is immediate and cannot be undone.": "Permanently erase your NoteCreep account, notes, pinned data, and settings. This action is immediate and cannot be undone.",
+  "Type \"delete\" to confirm": "Type \"delete\" to confirm",
+  "Delete Account Permanently": "Delete Account Permanently",
+  "User Not Found": "User Not Found",
+  "Return to Dashboard": "Return to Dashboard",
+  "User Profile Console": "User Profile Console",
+  "USER": "USER",
+  "ADMIN": "ADMIN",
+  "Verified Account": "Verified Account",
+  "Pending Verification": "Pending Verification",
+  "days member": "days member",
+  "Edit Profile": "Edit Profile",
+  "Biography": "Biography",
+  "Edit": "Edit",
+  "No bio provided. Click \"Edit Profile\" to add one.": "No bio provided. Click \"Edit Profile\" to add one.",
+  "Workspace Metrics": "Workspace Metrics",
+  "Active Notes": "Active Notes",
+  "Shared": "Shared",
+  "Note Health Ratio": "Note Health Ratio",
+  "Active": "Active",
+  "Trashed Notes": "Trashed Notes",
+  "Account Security & Session": "Account Security & Session",
+  "Active Session Time": "Active Session Time",
+  "mins": "mins",
+  "Verification Status": "Verification Status",
+  "VERIFIED": "VERIFIED",
+  "PENDING": "PENDING",
+  "Account Privilege": "Account Privilege",
+  "Pinned Ratio": "Pinned Ratio",
+  "of active notes": "of active notes",
+  "Registered Date": "Registered Date",
+  "Quick Actions": "Quick Actions",
+  "Admin Console": "Admin Console",
+  "Edit Bio": "Edit Bio",
+  "Profile updated": "Profile updated",
+  "Failed to update profile": "Failed to update profile",
+  "Bio": "Bio",
+  "Write a short bio about yourself...": "Write a short bio about yourself...",
+  "Saving...": "Saving...",
+  "Save Changes": "Save Changes",
+  "Failed to load admin data": "Failed to load admin data",
+  "Role updated": "Role updated",
+  "Failed to update role": "Failed to update role",
+  "Failed to toggle verification": "Failed to toggle verification",
+  "User purged": "User purged",
+  "Failed to delete user": "Failed to delete user",
+  "Restricted Access": "Restricted Access",
+  "Administrative privileges required.": "Administrative privileges required.",
+  "Overview": "Overview",
+  "Users": "Users",
+  "Audit Logs": "Audit Logs",
+  "Email System": "Email System",
+  "Details": "Details",
+  "Administrative Engine": "Administrative Engine",
+  "Refresh": "Refresh",
+  "Delete User": "Delete User",
+  "Permanently delete": "Permanently delete",
+  "and all their data?": "and all their data?",
+  "Secure Portal": "Secure Portal",
+  "Welcome Back": "Welcome Back",
+  "Sign in to access your NoteCreep workspace": "Sign in to access your NoteCreep workspace",
+  "Please verify your email first. Check your inbox!": "Please verify your email first. Check your inbox!",
+  "Username or Email": "Username or Email",
+  "Enter your username...": "Enter your username...",
+  "Enter your password...": "Enter your password...",
+  "Show password": "Show password",
+  "Hide password": "Hide password",
+  "Signing in...": "Signing in...",
+  "Sign In": "Sign In",
+  "Don't have an account?": "Don't have an account?",
+  "Create Account": "Create Account",
+  "New Workspace": "New Workspace",
+  "Join NoteCreep to organize and share your notes": "Join NoteCreep to organize and share your notes",
+  "Passwords do not match": "Passwords do not match",
+  "Password must be at least 8 characters": "Password must be at least 8 characters",
+  "Account created! Please check your email to verify.": "Account created! Please check your email to verify.",
+  "Registration failed": "Registration failed",
+  "Check your email for the verification link to activate your account.": "Check your email for the verification link to activate your account.",
+  "Choose a unique username...": "Choose a unique username...",
+  "At least 8 characters...": "At least 8 characters...",
+  "Confirm Password": "Confirm Password",
+  "Re-enter password...": "Re-enter password...",
+  "Creating Account...": "Creating Account...",
+  "Already have an account?": "Already have an account?",
+  "Account Recovery": "Account Recovery",
+  "Forgot Password?": "Forgot Password?",
+  "Enter your registered email address and we'll send you a link to reset your password.": "Enter your registered email address and we'll send you a link to reset your password.",
+  "Sending Link...": "Sending Link...",
+  "Send Reset Link": "Send Reset Link",
+  "Check your email inbox and click the reset link to choose a new password.": "Check your email inbox and click the reset link to choose a new password.",
+  "Back to Sign In": "Back to Sign In",
+  "Email Verification": "Email Verification",
+  "Verifying email link...": "Verifying email link...",
+  "Email verified successfully!": "Email verified successfully!",
+  "Invalid or expired link.": "Invalid or expired link.",
+  "Please enter the verification code.": "Please enter the verification code.",
+  "Verifying OTP code...": "Verifying OTP code...",
+  "Invalid OTP code.": "Invalid OTP code.",
+  "Email address is missing.": "Email address is missing.",
+  "Sending new code...": "Sending new code...",
+  "New verification code sent!": "New verification code sent!",
+  "Failed to resend code.": "Failed to resend code.",
+  "Verifying Account": "Verifying Account",
+  "Please wait while we validate your verification token...": "Please wait while we validate your verification token...",
+  "Verify Email": "Verify Email",
+  "Enter the verification code sent to your registered email address.": "Enter the verification code sent to your registered email address.",
+  "Verification Code (OTP)": "Verification Code (OTP)",
+  "Enter 6-digit code": "Enter 6-digit code",
+  "Verify Account": "Verify Account",
+  "Verifying...": "Verifying...",
+  "Didn't receive code? Resend OTP": "Didn't receive code? Resend OTP",
+  "Set New Password": "Set New Password",
+  "Reset Password": "Reset Password",
+  "Enter your new account password below": "Enter your new account password below",
+  "New Password": "New Password",
+  "Confirm New Password": "Confirm New Password",
+  "Re-enter new password...": "Re-enter new password...",
+  "Updating Password...": "Updating Password...",
+  "Update Password": "Update Password",
+  "Password Updated!": "Password Updated!",
+  "Your password has been changed. Redirecting to login...": "Your password has been changed. Redirecting to login...",
   "privacyPolicy": {
     "title": "Privacy Policy",
     "introduction": "This Privacy Policy explains how we collect, use, share, and protect your personal information when you use our services. We value your trust and we are committed to ensuring transparency. By using our website or any of our services, you agree to the practices outlined here. Please read this document carefully, as it describes not only what we do with your data but also your rights and responsibilities as a user.",
-    
     "section1": {
       "title": "1. Information We Collect",
       "body": "When you interact with our platform, we may collect different types of information to ensure smooth service delivery. This includes details that identify you, data that relates to your activities, and technical information about your devices. We collect this data through forms, automated processes, and cookies. Our aim is always to enhance your experience, not to intrude upon your privacy.",
@@ -167,7 +419,6 @@
       "li4": "Device and technical data like IP address, browser type, operating system, and screen resolution.",
       "li5": "Cookies and tracking technologies used to remember your preferences and improve website performance.(Currently we are not using it)"
     },
-
     "section2": {
       "title": "2. How We Use Information",
       "body": "The information collected is used to provide, personalize, and improve our services. We use data to ensure smooth functionality, communicate effectively, and maintain security. Additionally, some information is used to comply with legal obligations. We never sell your personal data to third parties. Our primary goal is to provide you with a safe and seamless experience.",
@@ -178,17 +429,14 @@
       "li5": "To comply with regulations and protect our legal rights.",
       "li6": "To deliver important updates, notifications, and promotional offers."
     },
-
     "section3": {
       "title": "3. Sharing of Information",
-      "body": "We respect your privacy and limit sharing of your personal data. However, under certain circumstances, we may disclose information. These include sharing with trusted organization or governments. We take strong measures to ensure that third parties like (government) handle your data with confidentiality and security. "
+      "body": "We respect your privacy and limit sharing of your personal data. However, under certain circumstances, we may disclose information. These include sharing with trusted organization or governments. We take strong measures to ensure that third parties like (government) handle your data with confidentiality and security."
     },
-
     "section4": {
       "title": "4. Data Storage and Retention",
       "body": "We retain your personal information only as long as necessary to provide services, comply with legal obligations, resolve disputes, and enforce agreements. Once data is no longer required, it is securely deleted or anonymized. Storage is managed using encrypted databases and industry-standard security practices."
     },
-
     "section5": {
       "title": "5. Your Rights",
       "intro": "As a valued user, you have certain rights concerning your personal data. These rights empower you to stay in control of your information. You may exercise them anytime by contacting us.",
@@ -198,42 +446,34 @@
       "li4": "Right to restrict – You can limit how we process your data under certain conditions. (You can limit data processing in paid services.)",
       "li5": "Right to opt-out – You can opt out of marketing communications and non-essential cookies.(Not applicable currently)"
     },
-
     "section6": {
       "title": "6. Cookies and Tracking",
       "body": "Cookies help us improve your browsing experience by remembering your preferences, storing session details, and analyzing trends. You can manage cookies through your browser settings. Disabling cookies may affect some functionalities but will not block access to our services. Again we do not use cookies for our core functionality. So you can disable it without any issue."
     },
-
     "section7": {
       "title": "7. Security Measures",
       "body": "We implement industry-standard security measures, including encryption, firewalls, and secure access protocols, to protect your data. However, no online platform can guarantee 100% security. We encourage users to maintain strong passwords and be cautious while sharing personal data online."
     },
-
     "section8": {
       "title": "8. Children’s Privacy",
       "body": "Our services are mainly for taking notes and organizing tasks or information. It will not affect children directly. We do not knowingly collect personal data from children under 10 years of age without parental consent. If we discover that we have inadvertently collected such data, we will promptly delete it. Parents or guardians who believe their child has provided us with personal information without consent should contact us immediately."
     },
-
     "section9": {
       "title": "9. International Data Transfers",
       "body": "Your information may be transferred and processed outside your home country. By using our services, you consent to such transfers, provided adequate safeguards are in place to protect your data."
     },
-
     "section10": {
       "title": "10. Updates to this Policy",
       "body": "We may update this Privacy Policy periodically to reflect changes in practices, technologies, or legal requirements. Updates will be posted on this page, and significant changes will be communicated directly to you."
     },
-
     "section11": {
       "title": "11. Contact Us",
       "body": "If you have any questions, concerns, or complaints about this Privacy Policy or data practices, please contact us at alrifatsabbir@gmail.com. We take your privacy seriously and will respond promptly."
     },
-
     "section12": {
       "title": "12. Final Notes",
       "body": "By continuing to use our services, you confirm that you have read, understood, and agreed to this Privacy Policy. We are committed to protecting your information and maintaining your trust."
     },
-
     "closing": "Thank you for trusting us with your personal data. Your privacy is our responsibility, and we will continue to improve our practices to safeguard your information."
   },
   "Legal Translation": "Legal Information",
@@ -243,72 +483,58 @@
     "body": "When you register for an account, you agree to provide accurate and complete information and to keep that information current. You are responsible for preserving the confidentiality of your account credentials and for all activity that occurs under your account. If you suspect your account has been compromised, you must notify us immediately. We reserve the right to suspend or terminate accounts that are inactive, used in violation of these Terms, or otherwise present risk to the Services or other users.",
     "intro": "Welcome to our platform. These Terms of Service (\"Terms\") govern your use of our website, applications, and services. By accessing or using the Services, you agree to these Terms in full.",
     "section1": {
-      "title": "1. Acceptance of Terms", 
+      "title": "1. Acceptance of Terms",
       "body": "By using the Services, you confirm you are of legal age and agree to comply with all applicable laws."
     },
     "section2": {
-      "title": "2. Modifications to Terms", 
+      "title": "2. Modifications to Terms",
       "body": "We may update these Terms at any time. Continued use of Services constitutes acceptance of updated Terms."
     },
     "section3": {
-      "title": "3. Privacy and Data", 
+      "title": "3. Privacy and Data",
       "body": "Our Privacy Policy explains how we handle user data. Using the Services signifies your consent."
     },
     "section4": {
-      "title": "4. Use of Services", 
+      "title": "4. Use of Services",
       "body": "You must use Services lawfully and not interfere with others use or the functioning of the platform."
     },
     "section5": {
-      "title": "5. Account Registration and Security", 
+      "title": "5. Account Registration and Security",
       "body": "Provide accurate information and secure your account credentials."
     },
     "section6": {
-    "title": "6. Content Ownership and Rights",
-    "body": "You retain your rights to any content you submit. As it is just note taking application/ website we do not claim any ownership of your content. You can use our services to store your personal notes, ideas, and information. We strictly follow ideals of privacy and security. We do not share any content with any third party."
+      "title": "6. Content Ownership and Rights",
+      "body": "You retain your rights to any content you submit. As it is just note taking application/ website we do not claim any ownership of your content. You can use our services to store your personal notes, ideas, and information. We strictly follow ideals of privacy and security. We do not share any content with any third party."
     },
-
-
     "section7": {
-    "title": "7. Payments, Subscriptions, and Refunds",
-    "body": "If the Services include paid features, you agree to pay the applicable fees and taxes. Fees are charged in advance and are non-refundable except as required by applicable law or as otherwise stated in a written agreement with us. We may use third-party payment processors to process payments. You must provide current, valid, and accepted payment information. We reserve the right to change pricing, add new fees, or introduce new charges upon notice to you. If you fail to pay any fees, we reserve the right to suspend or terminate your access to paid features."
+      "title": "7. Payments, Subscriptions, and Refunds",
+      "body": "If the Services include paid features, you agree to pay the applicable fees and taxes. Fees are charged in advance and are non-refundable except as required by applicable law or as otherwise stated in a written agreement with us. We may use third-party payment processors to process payments. You must provide current, valid, and accepted payment information. We reserve the right to change pricing, add new fees, or introduce new charges upon notice to you. If you fail to pay any fees, we reserve the right to suspend or terminate your access to paid features."
     },
-
-
     "section8": {
-    "title": "8. Prohibited Conduct",
-    "body": "You must not engage in any activity that constitutes harassment, threats, discrimination, defamation, or other harmful behavior toward other users. You are prohibited from transmitting viruses, malware, or other harmful computer code, collecting or exploiting data about other users without consent, or using the Service to infringe upon the intellectual property or privacy rights of others. We may investigate and take appropriate legal action against anyone who violates these Terms, including reporting you to law enforcement authorities."
+      "title": "8. Prohibited Conduct",
+      "body": "You must not engage in any activity that constitutes harassment, threats, discrimination, defamation, or other harmful behavior toward other users. You are prohibited from transmitting viruses, malware, or other harmful computer code, collecting or exploiting data about other users without consent, or using the Service to infringe upon the intellectual property or privacy rights of others. We may investigate and take appropriate legal action against anyone who violates these Terms, including reporting you to law enforcement authorities."
     },
-
-
     "section9": {
-    "title": "9. Termination and Suspension",
-    "body": "We may suspend or terminate your access to the Services, with or without notice, for any reason, including breach of these Terms or if we reasonably believe your actions could harm others or the Services. Upon termination, your right to use the Services will immediately cease, and we may delete or deactivate your account and content. Some provisions of these Terms will survive termination, including but not limited to Sections on intellectual property, disclaimers, limitation of liability, and dispute resolution."
+      "title": "9. Termination and Suspension",
+      "body": "We may suspend or terminate your access to the Services, with or without notice, for any reason, including breach of these Terms or if we reasonably believe your actions could harm others or the Services. Upon termination, your right to use the Services will immediately cease, and we may delete or deactivate your account and content. Some provisions of these Terms will survive termination, including but not limited to Sections on intellectual property, disclaimers, limitation of liability, and dispute resolution."
     },
-
-
     "section10": {
-    "title": "10. Disclaimers and Limitation of Liability",
-    "body": "THE SERVICES ARE PROVIDED \"AS IS\" AND \"AS AVAILABLE\" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, SECURE, OR ERROR-FREE. IN NO EVENT WILL WE OR OUR AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR THE USE OF THE SERVICES, WHETHER OR NOT WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR AGGREGATE LIABILITY FOR DIRECT DAMAGES IS LIMITED TO THE GREATER OF THE AMOUNT YOU PAID TO US IN THE PAST TWELVE (12) MONTHS OR ONE HUNDRED DOLLARS (USD 100)."
+      "title": "10. Disclaimers and Limitation of Liability",
+      "body": "THE SERVICES ARE PROVIDED \"AS IS\" AND \"AS AVAILABLE\" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, SECURE, OR ERROR-FREE. IN NO EVENT WILL WE OR OUR AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR THE USE OF THE SERVICES, WHETHER OR NOT WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR AGGREGATE LIABILITY FOR DIRECT DAMAGES IS LIMITED TO THE GREATER OF THE AMOUNT YOU PAID TO US IN THE PAST TWELVE (12) MONTHS OR ONE HUNDRED DOLLARS (USD 100)."
     },
-
-
     "section11": {
-    "title": "11. Indemnification",
-    "body": "You agree to indemnify, defend and hold harmless the company and its affiliates, officers, directors, employees, agents, and licensors from and against any and all claims, liabilities, damages, losses, and expenses, including reasonable attorneys' fees and costs, arising out of or relating to: (a) your breach of these Terms; (b) your use of the Services; (c) your violation of any law or third-party rights; or (d) any content you post or transmit through the Services."
+      "title": "11. Indemnification",
+      "body": "You agree to indemnify, defend and hold harmless the company and its affiliates, officers, directors, employees, agents, and licensors from and against any and all claims, liabilities, damages, losses, and expenses, including reasonable attorneys' fees and costs, arising out of or relating to: (a) your breach of these Terms; (b) your use of the Services; (c) your violation of any law or third-party rights; or (d) any content you post or transmit through the Services."
     },
-
-
     "section12": {
-    "title": "12. Governing Law and Dispute Resolution",
-    "body": "These Terms will be governed by and construed in accordance with the laws of the jurisdiction specified by the company, without regard to its conflict of law provisions. Except where prohibited by law, any dispute arising out of or relating to these Terms or the Services will be resolved through binding arbitration in the forum specified by the company, and you and the company each waive the right to a trial by jury and to participate in a class action. Notwithstanding the foregoing, either party may seek injunctive or other equitable relief in a court of competent jurisdiction to prevent actual or threatened infringement, misappropriation, or violation of intellectual property rights."
+      "title": "12. Governing Law and Dispute Resolution",
+      "body": "These Terms will be governed by and construed in accordance with the laws of the jurisdiction specified by the company, without regard to its conflict of law provisions. Except where prohibited by law, any dispute arising out of or relating to these Terms or the Services will be resolved through binding arbitration in the forum specified by the company, and you and the company each waive the right to a trial by jury and to participate in a class action. Notwithstanding the foregoing, either party may seek injunctive or other equitable relief in a court of competent jurisdiction to prevent actual or threatened infringement, misappropriation, or violation of intellectual property rights."
     },
-
-
     "section13": {
-    "title": "13. Miscellaneous",
-    "body": "These Terms, together with the Privacy Policy and any other policies or legal notices published by us, constitute the entire agreement between you and the company concerning the Services. If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect. Our failure to act with respect to a breach by you or others does not constitute a waiver of our right to act with respect to subsequent or similar breaches. You may not assign or transfer your rights or obligations under these Terms without our prior written consent, except that we may assign or transfer our rights and obligations to an affiliate or in connection with a merger, sale of assets, or reorganization."
+      "title": "13. Miscellaneous",
+      "body": "These Terms, together with the Privacy Policy and any other policies or legal notices published by us, constitute the entire agreement between you and the company concerning the Services. If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect. Our failure to act with respect to a breach by you or others does not constitute a waiver of our right to act with respect to subsequent or similar breaches. You may not assign or transfer your rights or obligations under these Terms without our prior written consent, except that we may assign or transfer our rights and obligations to an affiliate or in connection with a merger, sale of assets, or reorganization."
     },
-  "thanks": "Thank you for using our Services. If you have questions about these Terms, please contact us at alrifatsabbir@gmail.com."
+    "thanks": "Thank you for using our Services. If you have questions about these Terms, please contact us at alrifatsabbir@gmail.com."
   },
   "securityPolicy": {
     "title": "Security Policy",
@@ -352,7 +578,7 @@
     },
     "thanks": "Thank you for trusting us with your security. For questions, contact alrifatsabbir@gmail.com."
   },
-    "licenses": {
+  "licenses": {
     "title": "Licenses",
     "effectiveDate": "Effective Date: October 01, 2025",
     "intro": "This document outlines the licenses and legal permissions associated with the use of our software, content, and other materials. By using our services, you agree to comply with these licenses.",
@@ -420,7 +646,8 @@
     "Al Rifat Sabbir": "Al Rifat Sabbir"
   },
   "footer.Visit our Email": "Visit our Email",
-  "User Profile":"User Profile",
+  "Go Back": "Go Back",
+  "User Profile": "User Profile",
   "Bio": "Bio",
   "Account Management": "Account Management",
   "Edit Profile": "Edit Profile",
@@ -475,7 +702,7 @@
     "deleteAccount": "Delete My Account",
     "Edit Profile": "Edit Profile"
   },
-    "features": {
+  "features": {
     "title": "Amazing Features of Note Creep",
     "subtitle": "Discover the key features that make Note Creep the ultimate note-taking app. Designed for productivity, simplicity, and seamless organization of your thoughts, ideas, and tasks.",
     "sections": [

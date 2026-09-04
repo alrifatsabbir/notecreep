@@ -5,6 +5,7 @@ import './styles/index.css';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n/i18n.js';
 import { AuthProvider, AuthContext } from './context/AuthContext.jsx'; // ✅ AuthProvider এবং AuthContext import করা হয়েছে
+import { ConfirmProvider } from './context/ConfirmContext.jsx';
 import { BrowserRouter } from 'react-router-dom';
 import PageLoader from './components/PageLoader.jsx'; // ✅ Loader import করা হয়েছে
 
@@ -26,9 +27,17 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <I18nextProvider i18n={i18n}>
       <AuthProvider>
-        <RootComponent />
+        <ConfirmProvider>
+          <RootComponent />
+        </ConfirmProvider>
       </AuthProvider>
     </I18nextProvider>
   </React.StrictMode>,
 );
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  });
+}
 

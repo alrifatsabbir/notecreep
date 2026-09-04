@@ -1,129 +1,238 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
-import toast from 'react-hot-toast';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { useTranslation } from 'react-i18next';
+import { useNavigate, Link } from 'react-router-dom';
 import { auth } from '../../services/api';
-import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faAt, faEnvelope, faLock, faEye, faEyeSlash, faUserPlus, faExclamationTriangle, faCheckCircle, faShieldHalved } from '@fortawesome/free-solid-svg-icons';
+import gsap from 'gsap';
 
 const RegisterFormComponent = () => {
-    const { t, i18n } = useTranslation();
-    const navigate = useNavigate();
-    const [formData, setFormData] = useState({
-        name: '',
-        username: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-    });
-    const [showPassword, setShowPassword] = useState(false);
-    const [otpModal, setOtpModal] = useState(false);
-    const [otp, setOtp] = useState('');
-    const [isVerifyingOtp, setIsVerifyingOtp] = useState(false);
+  const { t } = useTranslation();
+  const [formData, setFormData] = useState({
+    name: '',
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
-    const containerRef = useRef(null);
-    const titleRef = useRef(null);
-    const formRef = useRef(null);
+  const navigate = useNavigate();
+  const formRef = useRef(null);
 
-    useEffect(() => {
-        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-        tl.fromTo(containerRef.current, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 })
-            .fromTo(titleRef.current, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.6 }, "-=0.5")
-            .fromTo(formRef.current?.children, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.1 }, "-=0.4");
-        return () => tl.kill();
-    }, []);
+  useEffect(() => {
+    if (formRef.current) {
+      gsap.fromTo(formRef.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }
+      );
+    }
+  }, [showSuccess]);
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-    const handleRegister = async (e) => {
-        e.preventDefault();
-        if (formData.password !== formData.confirmPassword) {
-            toast.error(t('register.passwordMismatch'));
-            return;
-        }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
 
-        const loadingToastId = toast.loading(t('register.loading'));
+    if (formData.password !== formData.confirmPassword) {
+      setError(t('Passwords do not match'));
+      setLoading(false);
+      return;
+    }
 
-        try {
-            const res = await auth.register({
-                name: formData.name,
-                username: formData.username,
-                email: formData.email,
-                password: formData.password,
-            });
+    if (formData.password.length < 8) {
+      setError(t('Password must be at least 8 characters'));
+      setLoading(false);
+      return;
+    }
 
-            toast.success(res.message || 'Account created! Check email for OTP', { id: loadingToastId });
-            setOtpModal(true);
+    try {
+      await auth.register({
+        name: formData.name,
+        username: formData.username,
+        email: formData.email,
+        password: formData.password
+      });
 
-        } catch (error) {
-            const msg = error.response?.data?.message || 'Registration failed';
-            toast.error(msg, { id: loadingToastId });
-        }
-    };
+      setShowSuccess(true);
+      toast.success(t('Account created! Please check your email to verify.'));
 
-    const handleOtpSubmit = async () => {
-        if (!otp) return toast.error('Please enter the OTP');
-        setIsVerifyingOtp(true);
-        const loadingToastId = toast.loading('Verifying OTP...');
-        try {
-            await auth.verifyEmailByOtp({ email: formData.email, otp });
-            toast.success('Email verified successfully!', { id: loadingToastId });
-            setOtpModal(false);
-            navigate('/login');
-        } catch (error) {
-            const msg = error.response?.data?.message || 'OTP verification failed';
-            toast.error(msg, { id: loadingToastId });
-        } finally {
-            setIsVerifyingOtp(false);
-        }
-    };
+      setTimeout(() => {
+        navigate('/verify-email', { state: { email: formData.email } });
+      }, 2000);
+    } catch (err) {
+      const msg = err.response?.data?.message || t('Registration failed');
+      setError(msg);
+      toast.error(msg);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng);
-    };
-
+  if (showSuccess) {
     return (
-        <div
-            ref={containerRef}
-            className="flex flex-col items-center justify-center p-8 sm:p-12 bg-white/10 backdrop-blur-xl rounded-2xl shadow-2xl relative z-10 max-w-md w-full"
-        >
-            <h2 ref={titleRef} className="text-4xl sm:text-2xl font-extrabold text-white mb-8">{t('register.title')}</h2>
-            <div className="flex gap-4 mb-4">
-                <button onClick={() => changeLanguage('en')} className="text-sm font-bold text-white hover:text-[#00bf63] transition-colors">English</button>
-                <button onClick={() => changeLanguage('bn')} className="text-sm font-bold text-white hover:text-[#00bf63] transition-colors">বাংলা</button>
-            </div>
-
-            {!otpModal ? (
-                <form ref={formRef} onSubmit={handleRegister} className="w-full space-y-6">
-                    <input type="text" name="name" placeholder={t('register.name')} value={formData.name} onChange={handleChange} className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00bf63]" />
-                    <input type="text" name="username" placeholder={t('register.username')} value={formData.username} onChange={handleChange} className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00bf63]" />
-                    <input type="email" name="email" placeholder={t('register.email')} value={formData.email} onChange={handleChange} className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00bf63]" />
-                    <div className="relative">
-                        <input type={showPassword ? "text" : "password"} name="password" placeholder={t('register.password')} value={formData.password} onChange={handleChange} className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00bf63] pr-12" />
-                        <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white">
-                            <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
-                        </button>
-                    </div>
-                    <input type="password" name="confirmPassword" placeholder={t('register.confirmPassword')} value={formData.confirmPassword} onChange={handleChange} className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00bf63]" />
-                    <button type="submit" className="w-full py-4 rounded-xl bg-[#00bf63] text-white text-xl font-bold hover:bg-[#008f4c] shadow-lg">{t('register.button')}</button>
-                </form>
-            ) : (
-                <div className="w-full space-y-6">
-                    <input type="text" name="otp" placeholder="Enter OTP" value={otp} onChange={(e) => setOtp(e.target.value)} className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00bf63]" />
-                    <button onClick={handleOtpSubmit} disabled={isVerifyingOtp} className="w-full py-4 rounded-xl bg-[#00bf63] text-white text-xl font-bold hover:bg-[#008f4c] shadow-lg">
-                        {isVerifyingOtp ? 'Verifying...' : 'Verify OTP'}
-                    </button>
-                </div>
-            )}
-
-            <p className="mt-6 text-gray-300 text-sm">
-                {t('register.haveAccount')} <a href="/login" className="text-[#c1ff72] hover:underline">{t('register.signIn')}</a>
-            </p>
+      <div ref={formRef} className="auth-card" style={{ textAlign: 'center' }}>
+        <div style={{ margin: '0 auto 16px', width: 64, height: 64, borderRadius: '50%', background: 'rgba(0, 191, 99, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <FontAwesomeIcon icon={faCheckCircle} style={{ fontSize: 32, color: '#00bf63' }} />
         </div>
+        <h2 className="auth-title">{t('Account Created!')}</h2>
+        <p className="auth-subtitle" style={{ marginBottom: 0 }}>
+          {t('Check your email for the verification link to activate your account.')}
+        </p>
+      </div>
     );
+  }
+
+  return (
+    <div ref={formRef} className="auth-card">
+      {/* Security Badge */}
+      <div className="auth-badge">
+        <span className="auth-badge-dot" />
+        <FontAwesomeIcon icon={faShieldHalved} style={{ fontSize: 11 }} />
+        <span>{t('New Workspace')}</span>
+      </div>
+
+      <h2 className="auth-title">{t('Create Account')}</h2>
+      <p className="auth-subtitle">{t('Join NoteCreep to organize and share your notes')}</p>
+
+      {error && (
+        <div className="auth-error-box">
+          <FontAwesomeIcon icon={faExclamationTriangle} style={{ marginTop: 2 }} />
+          <span>{error}</span>
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit}>
+        {/* Full Name */}
+        <div className="auth-form-group">
+          <label className="auth-label">{t('Full Name')}</label>
+          <div className="auth-input-wrapper">
+            <FontAwesomeIcon icon={faUser} className="auth-input-icon" />
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder={t('Enter your full name...')}
+              className="auth-input"
+              required
+            />
+          </div>
+        </div>
+
+        {/* Username */}
+        <div className="auth-form-group">
+          <label className="auth-label">{t('Username')}</label>
+          <div className="auth-input-wrapper">
+            <FontAwesomeIcon icon={faAt} className="auth-input-icon" />
+            <input
+              type="text"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+              placeholder={t('Choose a unique username...')}
+              className="auth-input"
+              required
+            />
+          </div>
+        </div>
+
+        {/* Email */}
+        <div className="auth-form-group">
+          <label className="auth-label">{t('Email Address')}</label>
+          <div className="auth-input-wrapper">
+            <FontAwesomeIcon icon={faEnvelope} className="auth-input-icon" />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder={t('name@example.com')}
+              className="auth-input"
+              required
+            />
+          </div>
+        </div>
+
+        {/* Password */}
+        <div className="auth-form-group">
+          <label className="auth-label">{t('Password')}</label>
+          <div className="auth-input-wrapper">
+            <FontAwesomeIcon icon={faLock} className="auth-input-icon" />
+            <input
+              type={showPassword ? 'text' : 'password'}
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder={t('At least 8 characters...')}
+              className="auth-input"
+              style={{ paddingRight: 40 }}
+              required
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="auth-eye-btn"
+              title={showPassword ? t('Hide password') : t('Show password')}
+            >
+              <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+            </button>
+          </div>
+        </div>
+
+        {/* Confirm Password */}
+        <div className="auth-form-group">
+          <label className="auth-label">{t('Confirm Password')}</label>
+          <div className="auth-input-wrapper">
+            <FontAwesomeIcon icon={faLock} className="auth-input-icon" />
+            <input
+              type={showConfirmPassword ? 'text' : 'password'}
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              placeholder={t('Re-enter password...')}
+              className="auth-input"
+              style={{ paddingRight: 40 }}
+              required
+            />
+            <button
+              type="button"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              className="auth-eye-btn"
+              title={showConfirmPassword ? t('Hide password') : t('Show password')}
+            >
+              <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
+            </button>
+          </div>
+        </div>
+
+        {/* Submit Button */}
+        <button type="submit" disabled={loading} className="auth-btn-primary">
+          <FontAwesomeIcon icon={faUserPlus} />
+          <span>{loading ? t('Creating Account...') : t('Create Account')}</span>
+        </button>
+      </form>
+
+      {/* Footer Nav Links */}
+      <div className="auth-footer-links">
+        <span>
+          {t('Already have an account?')}{' '}
+          <Link to="/login" className="auth-link">
+            {t('Sign In')}
+          </Link>
+        </span>
+      </div>
+    </div>
+  );
 };
 
 export default RegisterFormComponent;

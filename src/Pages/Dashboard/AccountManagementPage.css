@@ -1,0 +1,259 @@
+/* Account Management Page - High End Cockpit Design */
+.acct-root {
+  min-height: 100vh;
+  background: #060a13;
+  color: #e2e8f0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  position: relative;
+}
+
+.acct-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 96px 24px 64px;
+}
+
+/* Header Bar */
+.acct-header-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.acct-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.acct-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.acct-subtitle {
+  font-size: 12px;
+  font-family: monospace;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* Hero User Card */
+.acct-hero-card {
+  background: rgba(13, 17, 23, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.acct-hero-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.acct-hero-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background: #080c14;
+  border: 1px solid rgba(0, 191, 99, 0.3);
+  padding: 4px;
+  object-fit: contain;
+}
+
+.acct-hero-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.acct-hero-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.acct-hero-username {
+  font-size: 13px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #64748b;
+}
+
+.acct-hero-email {
+  font-size: 12px;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+/* Panel Grid */
+.acct-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 860px) {
+  .acct-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Settings Card */
+.acct-card {
+  background: #0d1117;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 24px;
+  transition: border-color 0.2s ease;
+}
+
+.acct-card:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.acct-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #161f30;
+}
+
+.acct-card-header svg {
+  font-size: 14px;
+}
+
+.acct-label {
+  display: block;
+  font-size: 11px;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.acct-input {
+  width: 100%;
+  padding: 10px 14px;
+  background: #080c14;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.acct-input:focus {
+  border-color: #00bf63;
+}
+
+.acct-btn-primary {
+  width: 100%;
+  padding: 10px 16px;
+  margin-top: 14px;
+  background: #00bf63;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.acct-btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.acct-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.acct-btn-secondary {
+  width: 100%;
+  padding: 10px 16px;
+  margin-top: 14px;
+  background: #111827;
+  border: 1px solid #1e293b;
+  color: #e2e8f0;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.acct-btn-secondary:hover {
+  border-color: #3b82f6;
+  background: #0d1117;
+}
+
+/* Danger Zone */
+.acct-danger-card {
+  background: #0d1117;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.acct-danger-title {
+  color: #ef4444;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.acct-danger-desc {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.acct-danger-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.acct-btn-danger {
+  padding: 10px 20px;
+  background: #dc2626;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.acct-btn-danger:hover {
+  background: #b91c1c;
+}

@@ -1,3 +1,4 @@
+// src/context/AuthContext.jsx
 import React, { createContext, useState, useEffect, useCallback } from 'react';
 import { auth } from '../services/api';
 
@@ -11,17 +12,18 @@ export const AuthProvider = ({ children }) => {
     const login = useCallback(async ({ username, password }) => {
         setIsLoading(true);
         try {
-            const responseData = await auth.login({ username, password });
+            const response = await auth.login({ username, password });
+            const data = response.data;
             
-            // ✅ Change: We are now explicitly saving the token and user data to localStorage.
-            if (responseData.token) {
-                localStorage.setItem('token', responseData.token);
-                localStorage.setItem('user', JSON.stringify(responseData.user));
+            if (data?.token) {
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('user', JSON.stringify(data.user));
             }
 
             setIsLoggedIn(true);
-            setUser(responseData.user);
+            setUser(data.user);
 
+            return data;
         } catch (error) {
             console.error('Login failed:', error);
             setIsLoggedIn(false);
@@ -46,26 +48,32 @@ export const AuthProvider = ({ children }) => {
         const token = localStorage.getItem('token');
         const savedUser = localStorage.getItem('user');
 
-        if (token && savedUser) {
+        if (token && savedUser && token !== 'undefined') {
             try {
-                // ✅ Change: We will now make an API call to verify the token.
-                // The backend's `verifyToken` middleware will validate the token.
-                await auth.getUserProfile(JSON.parse(savedUser).username);
+                const parsedUser = JSON.parse(savedUser);
+                await auth.getUserProfile(parsedUser.username);
 
-                // If the API call succeeds, the token is valid, so we set the state.
                 setIsLoggedIn(true);
-                setUser(JSON.parse(savedUser));
+                setUser(parsedUser);
             } catch (error) {
-                // If the API call fails, it means the token is invalid or expired.
                 console.error('Authentication check failed:', error);
-                logout(); // Call the logout function to clear localStorage and state
+                logout();
             }
         } else {
-            // No token or user data means not logged in.
             logout();
         }
         setIsLoading(false);
-    }, [logout]); // Added logout to the dependency array
+    }, [logout]);
+
+    // Check for email verification requirement
+    const checkVerification = useCallback(async (email) => {
+        try {
+            const response = await auth.getUserProfile(email);
+            return response.isVerified;
+        } catch (error) {
+            return false;
+        }
+    }, []);
 
     useEffect(() => {
         checkAuthStatus();
@@ -77,7 +85,8 @@ export const AuthProvider = ({ children }) => {
         logout,
         user,
         isLoading,
-        checkAuthStatus // It's good practice to expose this if needed elsewhere
+        checkAuthStatus,
+        checkVerification,
     };
 
     return (
