@@ -138,12 +138,18 @@ export const analytics = {
   // Get dashboard summary
   getDashboardSummary: () => API.get('/analytics/dashboard-summary'),
   
-  // Get notes analytics
-  getAnalytics: () => API.get('/analytics/analytics'),
-  getNotesAnalytics: () => API.get('/analytics/analytics'),
+  // Get notes analytics with client timezone
+  getAnalytics: (timezone) => {
+    const tz = timezone || (typeof Intl !== 'undefined' ? Intl.DateTimeFormat().resolvedOptions().timeZone : 'Asia/Dhaka');
+    return API.get(`/analytics/analytics?timezone=${encodeURIComponent(tz)}`);
+  },
+  getNotesAnalytics: (timezone) => {
+    const tz = timezone || (typeof Intl !== 'undefined' ? Intl.DateTimeFormat().resolvedOptions().timeZone : 'Asia/Dhaka');
+    return API.get(`/analytics/analytics?timezone=${encodeURIComponent(tz)}`);
+  },
   
   // Update session time
-  updateSession: (time) => API.post('/analytics/update-session', { time }),
+  updateSession: (data) => API.post('/analytics/update-session', typeof data === 'object' ? data : { time: data }),
 };
 
 // ================================

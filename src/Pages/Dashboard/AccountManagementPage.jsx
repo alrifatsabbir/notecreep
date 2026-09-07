@@ -209,7 +209,7 @@ const AccountManagementPage = () => {
             </Link>
 
             <button 
-              onClick={() => { logout(); navigate('/login'); }}
+              onClick={() => { logout(); navigate('/'); }}
               style={{
                 padding: '8px 14px', background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.3)',
                 borderRadius: 10, color: '#f87171', fontSize: 12, fontWeight: 700,

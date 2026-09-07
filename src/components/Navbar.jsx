@@ -115,6 +115,7 @@ const Navbar = () => {
     logout();
     setIsProfileMenuOpen(false);
     setIsMenuOpen(false);
+    navigate('/');
   };
 
   const currentLangCode = i18n.language === 'bn' ? 'BN' : 'EN';

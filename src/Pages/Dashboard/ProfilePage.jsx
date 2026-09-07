@@ -367,7 +367,7 @@ const ProfilePage = () => {
                   </button>
 
                   <button 
-                    onClick={() => { logout(); navigate('/login'); }}
+                    onClick={() => { logout(); navigate('/'); }}
                     className="profile-btn-action profile-btn-logout"
                   >
                     <FontAwesomeIcon icon={faSignOutAlt} />

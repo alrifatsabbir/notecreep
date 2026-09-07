@@ -63,15 +63,59 @@ const App = () => {
     return () => clearTimeout(timeout);
   }, [location.pathname]);
 
-  // ✅ নতুন useEffect Hook-টি যুক্ত করা হয়েছে সম্পূর্ণ ওয়েবসাইটের সময় ট্র্যাক করার জন্য।
+  // Real-time Active Time Tracking (No hallucination, visibility-aware, idle-safe, multi-tab deduplicated)
   useEffect(() => {
-    let interval;
-    if (isLoggedIn) {
-      interval = setInterval(() => {
-        analytics.updateSession({ time: 1 });
-      }, 60000); // 60000ms = 1 minute
-    }
-    return () => clearInterval(interval);
+    if (!isLoggedIn) return;
+
+    let lastActiveTime = Date.now();
+    const IDLE_TIMEOUT_MS = 3 * 60 * 1000; // 3 minutes idle threshold
+
+    const onUserActivity = () => {
+      lastActiveTime = Date.now();
+    };
+
+    window.addEventListener('mousemove', onUserActivity, { passive: true });
+    window.addEventListener('keydown', onUserActivity, { passive: true });
+    window.addEventListener('scroll', onUserActivity, { passive: true });
+    window.addEventListener('click', onUserActivity, { passive: true });
+    window.addEventListener('touchstart', onUserActivity, { passive: true });
+
+    const interval = setInterval(() => {
+      // 1. Only track if tab is currently visible
+      if (document.hidden || (typeof document.visibilityState !== 'undefined' && document.visibilityState !== 'visible')) {
+        return;
+      }
+
+      // 2. Only track if user had active interactions recently (prevents idle AFK accumulation)
+      const isIdle = Date.now() - lastActiveTime > IDLE_TIMEOUT_MS;
+      if (isIdle) {
+        return;
+      }
+
+      // 3. Multi-tab deduplication via localStorage timestamp
+      const now = Date.now();
+      const lastPing = Number(localStorage.getItem('notecreep_last_session_ping') || 0);
+      if (now - lastPing < 50000) {
+        // Another active tab already logged this minute
+        return;
+      }
+      localStorage.setItem('notecreep_last_session_ping', String(now));
+
+      // 4. Local timezone & date resolution (defaults to Asia/Dhaka / user browser local)
+      const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Asia/Dhaka';
+      const clientDate = new Intl.DateTimeFormat('en-CA', { timeZone: timezone }).format(new Date());
+
+      analytics.updateSession({ time: 1, timezone, clientDate }).catch(() => {});
+    }, 60000); // 1-minute heartbeat
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('mousemove', onUserActivity);
+      window.removeEventListener('keydown', onUserActivity);
+      window.removeEventListener('scroll', onUserActivity);
+      window.removeEventListener('click', onUserActivity);
+      window.removeEventListener('touchstart', onUserActivity);
+    };
   }, [isLoggedIn]);
 
   const currentLanguage = i18n.language;
